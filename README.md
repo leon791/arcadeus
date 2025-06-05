@@ -95,4 +95,4 @@ The website uses CSS custom properties (variables) for easy theming:
 
 ## License
 
-Private - Arcadeus Website
+Private - Arcadeus Website# arcadeus
