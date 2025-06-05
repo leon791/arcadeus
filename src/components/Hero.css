@@ -1,63 +1,53 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   padding-top: 80px;
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.hero-gradient {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 50%, #F9FAFB 100%);
+  background: var(--white);
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
+  text-align: center;
+  margin-bottom: 6rem;
 }
 
 .hero-text {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .hero-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--dark-gray);
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .title-highlight {
-  color: var(--primary-blue);
+  color: var(--text-primary);
 }
 
 .hero-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.25rem;
-  color: var(--medium-gray);
-  line-height: 1.6;
+  color: var(--text-secondary);
+  line-height: 1.5;
   margin-bottom: 2.5rem;
+  font-weight: 400;
+  max-width: 600px;
 }
 
 .hero-cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-large {

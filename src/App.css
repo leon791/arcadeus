@@ -3,97 +3,102 @@
   overflow-x: hidden;
 }
 
-/* Color palette for financial services */
+/* Minimalist color palette */
 :root {
-  --primary-blue: #0B3B73;
-  --secondary-blue: #1E5299;
-  --light-blue: #F0F7FF;
-  --accent-gold: #D4AF37;
-  --dark-gray: #2C2C2C;
-  --medium-gray: #6B7280;
-  --light-gray: #F9FAFB;
-  --white: #FFFFFF;
-  --success-green: #10B981;
-  --gradient-bg: linear-gradient(135deg, #0B3B73 0%, #1E5299 100%);
+  --primary-black: #000000;
+  --secondary-black: #1a1a1a;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6b7280;
+  --border-gray: #e5e7eb;
+  --white: #ffffff;
+  --accent-blue: #0066cc;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
 }
 
 /* Container utility */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 /* Section spacing */
 .section {
-  padding: 80px 0;
+  padding: 120px 0;
 }
 
 .section-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--dark-gray);
+  font-weight: 600;
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
-  color: var(--medium-gray);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Buttons */
 .btn {
-  padding: 12px 32px;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 500;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   cursor: pointer;
-  border: none;
-  font-size: 1rem;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .btn-primary {
-  background: var(--gradient-bg);
+  background: var(--primary-black);
   color: var(--white);
+  border-color: var(--primary-black);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(11, 59, 115, 0.2);
+  background: var(--secondary-black);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
+  background: var(--white);
+  color: var(--text-primary);
+  border: 1px solid var(--border-gray);
 }
 
 .btn-secondary:hover {
-  background: var(--primary-blue);
-  color: var(--white);
+  background: var(--light-gray);
+  border-color: var(--text-primary);
 }
 
 /* Cards */
 .card {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border-gray);
+  transition: all 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--text-primary);
 }
 
 /* Responsive */

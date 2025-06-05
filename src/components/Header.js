@@ -17,19 +17,21 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <div className="logo">
-            <span className="logo-text">Arcadeus</span>
+          <div className="nav-left">
+            <div className="logo">
+              <span className="logo-text">Arcadeus</span>
+            </div>
+            
+            <ul className="nav-links">
+              <li><a href="#product">Product</a></li>
+              <li><a href="#solutions">Solutions</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
           </div>
           
-          <ul className="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          
-          <div className="nav-cta">
-            <a href="#contact" className="btn btn-primary">Get Started</a>
+          <div className="nav-right">
+            <a href="#login" className="nav-link">Log In</a>
+            <a href="#signup" className="btn btn-primary">Sign Up</a>
           </div>
         </nav>
       </div>

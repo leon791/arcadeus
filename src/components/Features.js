@@ -3,31 +3,46 @@ import { motion } from 'framer-motion';
 import './Features.css';
 
 const Features = () => {
-  const features = [
+  const usageStats = [
     {
-      title: 'Advanced AI Analytics',
-      description: 'Leverage machine learning algorithms trained on billions of financial data points for unprecedented insights.',
-      icon: '🤖',
-      stats: '99.7% accuracy'
+      metric: 'Models Processed',
+      value: '2.4M+',
+      change: '+127%',
+      data: [20, 35, 45, 60, 80, 95, 100]
     },
     {
-      title: 'Real-time Processing',
-      description: 'Process complex financial models and generate comprehensive reports in minutes, not days.',
-      icon: '⚡',
-      stats: '95% faster'
+      metric: 'Time Saved',
+      value: '890K hrs',
+      change: '+89%',
+      data: [15, 25, 40, 55, 70, 85, 95]
     },
     {
-      title: 'Enterprise Security',
-      description: 'Bank-grade security with SOC 2 compliance, end-to-end encryption, and role-based access controls.',
-      icon: '🔒',
-      stats: 'SOC 2 certified'
+      metric: 'Active Users',
+      value: '12,500+',
+      change: '+156%',
+      data: [10, 20, 30, 50, 65, 80, 100]
     },
     {
-      title: 'Seamless Integration',
-      description: 'Connect with existing financial platforms and data sources through robust APIs and native integrations.',
-      icon: '🔗',
-      stats: '50+ integrations'
+      metric: 'Deal Volume',
+      value: '$47.2B',
+      change: '+203%',
+      data: [25, 40, 35, 60, 75, 90, 100]
     }
+  ];
+
+  const monthlyGrowth = [
+    { month: 'Jan', value: 2400 },
+    { month: 'Feb', value: 3200 },
+    { month: 'Mar', value: 4100 },
+    { month: 'Apr', value: 5800 },
+    { month: 'May', value: 7200 },
+    { month: 'Jun', value: 8900 },
+    { month: 'Jul', value: 11200 },
+    { month: 'Aug', value: 13500 },
+    { month: 'Sep', value: 16800 },
+    { month: 'Oct', value: 19200 },
+    { month: 'Nov', value: 22400 },
+    { month: 'Dec', value: 24000 }
   ];
 
   const processSteps = [
@@ -68,24 +83,66 @@ const Features = () => {
           </p>
         </motion.div>
 
-        <div className="features-grid">
-          {features.map((feature, index) => (
+        <div className="usage-stats-grid">
+          {usageStats.map((stat, index) => (
             <motion.div
               key={index}
-              className="feature-card"
+              className="stat-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="feature-icon">{feature.icon}</div>
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
-              <div className="feature-stat">{feature.stats}</div>
+              <div className="stat-header">
+                <div className="stat-label">{stat.metric}</div>
+                <div className="stat-change">{stat.change}</div>
+              </div>
+              <div className="stat-value">{stat.value}</div>
+              <div className="mini-chart">
+                {stat.data.map((point, i) => (
+                  <div 
+                    key={i}
+                    className="chart-bar"
+                    style={{ height: `${point}%` }}
+                  />
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="growth-chart-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="chart-title">Monthly Usage Growth</h3>
+          <div className="growth-chart">
+            <div className="chart-container">
+              {monthlyGrowth.map((month, index) => (
+                <div key={index} className="chart-column">
+                  <div 
+                    className="chart-bar-large"
+                    style={{ height: `${(month.value / 24000) * 100}%` }}
+                  />
+                  <div className="chart-label">{month.month}</div>
+                </div>
+              ))}
+            </div>
+            <div className="chart-info">
+              <div className="chart-metric">
+                <span className="metric-label">Total Models Processed</span>
+                <span className="metric-value">24,000</span>
+              </div>
+              <div className="chart-metric">
+                <span className="metric-label">Average Monthly Growth</span>
+                <span className="metric-value">+18.2%</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           className="process-section"
