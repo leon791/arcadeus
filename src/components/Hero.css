@@ -20,13 +20,13 @@
 }
 
 .hero-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.1;
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.15;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .title-highlight {
@@ -34,13 +34,15 @@
 }
 
 .hero-subtitle {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
   font-weight: 400;
-  max-width: 600px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-cta {
@@ -177,25 +179,19 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: var(--medium-gray);
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
 @media (max-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
   .hero-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -205,11 +201,11 @@
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
   
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .hero-cta {

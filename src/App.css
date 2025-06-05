@@ -3,6 +3,20 @@
   overflow-x: hidden;
 }
 
+/* Enhanced animations and smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Minimalist color palette */
 :root {
   --primary-black: #000000;
@@ -25,27 +39,27 @@
 
 /* Section spacing */
 .section {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .section-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
   color: var(--text-primary);
   text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .section-subtitle {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.125rem;
+  font-family: var(--font-text);
+  font-size: 0.875rem;
   color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 5rem;
-  max-width: 600px;
+  margin-bottom: 3.5rem;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   font-weight: 400;
@@ -54,16 +68,16 @@
 
 /* Buttons */
 .btn {
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 8px 18px;
+  border-radius: 4px;
   font-weight: 500;
   text-decoration: none;
   display: inline-block;
   transition: all 0.15s ease;
   cursor: pointer;
   border: 1px solid transparent;
-  font-size: 0.95rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.8rem;
+  font-family: var(--font-serif);
 }
 
 .btn-primary {

@@ -5,10 +5,6 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="hero-background">
-        <div className="hero-gradient"></div>
-      </div>
-      
       <div className="container">
         <div className="hero-content">
           <motion.div 
@@ -51,7 +47,6 @@ const Hero = () => {
               </a>
             </motion.div>
           </motion.div>
-          
         </div>
         
         <motion.div 

@@ -3,6 +3,7 @@
   padding-bottom: 0;
 }
 
+
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -28,7 +29,7 @@
 }
 
 .form-header p {
-  font-family: 'Work Sans', 'Graphik', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-serif);
   color: var(--medium-gray);
   line-height: 1.5;
   font-weight: 400;
@@ -223,14 +224,14 @@
 }
 
 .cta-content h3 {
-  font-family: 'Playfair Display', 'Canela', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 2.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .cta-content p {
-  font-family: 'Work Sans', 'Graphik', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-serif);
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
@@ -277,7 +278,7 @@
 }
 
 .footer-logo {
-  font-family: 'Playfair Display', 'Canela', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--white);

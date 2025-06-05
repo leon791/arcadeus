@@ -46,7 +46,7 @@
 }
 
 .about-story p {
-  font-family: 'Work Sans', 'Graphik', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-serif);
   color: var(--medium-gray);
   line-height: 1.7;
   margin-bottom: 1.5rem;
@@ -118,7 +118,7 @@
 }
 
 .team-title {
-  font-family: 'Playfair Display', 'Canela', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 2.25rem;
   font-weight: 600;
   color: var(--dark-gray);
@@ -245,6 +245,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  
   
   .team-grid {
     grid-template-columns: 1fr;

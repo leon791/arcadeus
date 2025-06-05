@@ -55,15 +55,29 @@ const Services = () => {
     <section id="services" className="services section">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Our Services
+          </motion.h2>
+          <motion.p 
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Comprehensive AI-powered solutions designed specifically for private equity and investment banking professionals
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="services-grid">
@@ -71,27 +85,79 @@ const Services = () => {
             <motion.div
               key={index}
               className="service-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: "easeOut",
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ 
+                y: -12,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
             >
-              <div className="service-icon">
+              <motion.div 
+                className="service-icon"
+                initial={{ scale: 0, rotate: -180 }}
+                whileInView={{ scale: 1, rotate: 0 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15 + 0.3,
+                  ease: "easeOut",
+                  type: "spring"
+                }}
+                viewport={{ once: true }}
+              >
                 {service.icon}
-              </div>
+              </motion.div>
               
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
+              <motion.h3 
+                className="service-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
+                viewport={{ once: true }}
+              >
+                {service.title}
+              </motion.h3>
+              <motion.p 
+                className="service-description"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.5 }}
+                viewport={{ once: true }}
+              >
+                {service.description}
+              </motion.p>
               
-              <ul className="service-features">
+              <motion.ul 
+                className="service-features"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.6 }}
+                viewport={{ once: true }}
+              >
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>
+                  <motion.li 
+                    key={featureIndex}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      delay: index * 0.15 + 0.7 + featureIndex * 0.1 
+                    }}
+                    viewport={{ once: true }}
+                  >
                     <span className="feature-check">✓</span>
                     {feature}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
               
               <div className="service-cta">
                 <a href="#contact" className="btn btn-secondary">Learn More</a>
@@ -102,23 +168,57 @@ const Services = () => {
 
         <motion.div
           className="services-bottom"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="integration-banner">
-            <div className="integration-content">
+          <motion.div 
+            className="integration-banner"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="integration-content"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              viewport={{ once: true }}
+            >
               <h3>Seamless Integration</h3>
               <p>Works with your existing tools and workflows. No disruption to your current processes.</p>
-            </div>
-            <div className="integration-logos">
-              <div className="integration-logo">Bloomberg</div>
-              <div className="integration-logo">Refinitiv</div>
-              <div className="integration-logo">FactSet</div>
-              <div className="integration-logo">Excel</div>
-            </div>
-          </div>
+            </motion.div>
+            <motion.div 
+              className="integration-logos"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {['Bloomberg', 'Refinitiv', 'FactSet', 'Excel'].map((logo, index) => (
+                <motion.div 
+                  key={logo}
+                  className="integration-logo"
+                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.9 + index * 0.1,
+                    ease: "easeOut" 
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  {logo}
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

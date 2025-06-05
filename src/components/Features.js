@@ -72,15 +72,29 @@ const Features = () => {
     <section id="features" className="features section">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="section-title">Why Choose Arcadeus</h2>
-          <p className="section-subtitle">
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Why Choose Arcadeus
+          </motion.h2>
+          <motion.p 
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Cutting-edge technology meets financial expertise to deliver unparalleled results
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="usage-stats-grid">
@@ -88,60 +102,319 @@ const Features = () => {
             <motion.div
               key={index}
               className="stat-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: "easeOut",
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
             >
-              <div className="stat-header">
+              <motion.div 
+                className="stat-header"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
+                viewport={{ once: true }}
+              >
                 <div className="stat-label">{stat.metric}</div>
-                <div className="stat-change">{stat.change}</div>
-              </div>
-              <div className="stat-value">{stat.value}</div>
-              <div className="mini-chart">
+                <motion.div 
+                  className="stat-change"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.15 + 0.5,
+                    type: "spring",
+                    stiffness: 150
+                  }}
+                  viewport={{ once: true }}
+                >
+                  {stat.change}
+                </motion.div>
+              </motion.div>
+              <motion.div 
+                className="stat-value"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15 + 0.4,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
+              >
+                {stat.value}
+              </motion.div>
+              <motion.div 
+                className="mini-chart"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.6 }}
+                viewport={{ once: true }}
+              >
                 {stat.data.map((point, i) => (
-                  <div 
+                  <motion.div 
                     key={i}
                     className="chart-bar"
                     style={{ height: `${point}%` }}
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: index * 0.15 + 0.7 + i * 0.05,
+                      ease: "easeOut"
+                    }}
+                    viewport={{ once: true }}
                   />
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
           className="growth-chart-section"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          <h3 className="chart-title">Monthly Usage Growth</h3>
+          <motion.h3 
+            className="chart-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            Monthly Usage Growth
+          </motion.h3>
           <div className="growth-chart">
-            <div className="chart-container">
+            <motion.div 
+              className="chart-container"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
               {monthlyGrowth.map((month, index) => (
-                <div key={index} className="chart-column">
-                  <div 
+                <motion.div 
+                  key={index} 
+                  className="chart-column"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div 
                     className="chart-bar-large"
                     style={{ height: `${(month.value / 24000) * 100}%` }}
+                    initial={{ scaleY: 0, transformOrigin: "bottom" }}
+                    whileInView={{ scaleY: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: 0.9 + index * 0.08,
+                      ease: "easeOut"
+                    }}
+                    viewport={{ once: true }}
                   />
-                  <div className="chart-label">{month.month}</div>
-                </div>
+                  <motion.div 
+                    className="chart-label"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
+                    viewport={{ once: true }}
+                  >
+                    {month.month}
+                  </motion.div>
+                </motion.div>
               ))}
-            </div>
-            <div className="chart-info">
-              <div className="chart-metric">
+            </motion.div>
+            <motion.div 
+              className="chart-info"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="chart-metric"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.7 }}
+                viewport={{ once: true }}
+              >
                 <span className="metric-label">Total Models Processed</span>
                 <span className="metric-value">24,000</span>
-              </div>
-              <div className="chart-metric">
+              </motion.div>
+              <motion.div 
+                className="chart-metric"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.9 }}
+                viewport={{ once: true }}
+              >
                 <span className="metric-label">Average Monthly Growth</span>
                 <span className="metric-value">+18.2%</span>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="excel-showcase"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.h3 
+            className="showcase-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            Excel Plugin Integration
+          </motion.h3>
+          <motion.p 
+            className="showcase-subtitle"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Seamlessly integrate Arcadeus into your existing Excel workflow with our powerful plugin
+          </motion.p>
+          
+          <motion.div 
+            className="excel-demo"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="excel-window">
+              <div className="excel-header">
+                <div className="window-controls">
+                  <span className="control red"></span>
+                  <span className="control yellow"></span>
+                  <span className="control green"></span>
+                </div>
+                <div className="excel-title">Financial_Model_Q4_2024.xlsx - Excel</div>
+              </div>
+              
+              <div className="excel-content">
+                <div className="excel-split">
+                  <div className="excel-output">
+                    <div className="sheet-tab">DCF Model</div>
+                    <div className="excel-grid">
+                      <div className="excel-row header-row">
+                        <div className="cell"></div>
+                        <div className="cell">2024E</div>
+                        <div className="cell">2025E</div>
+                        <div className="cell">2026E</div>
+                        <div className="cell">2027E</div>
+                        <div className="cell">2028E</div>
+                      </div>
+                      <div className="excel-row">
+                        <div className="cell label">Revenue</div>
+                        <div className="cell">$125.4M</div>
+                        <div className="cell">$156.8M</div>
+                        <div className="cell">$196.0M</div>
+                        <div className="cell">$245.0M</div>
+                        <div className="cell">$306.3M</div>
+                      </div>
+                      <div className="excel-row">
+                        <div className="cell label">EBITDA</div>
+                        <div className="cell">$31.4M</div>
+                        <div className="cell">$43.9M</div>
+                        <div className="cell">$58.8M</div>
+                        <div className="cell">$78.4M</div>
+                        <div className="cell">$104.1M</div>
+                      </div>
+                      <div className="excel-row">
+                        <div className="cell label">FCF</div>
+                        <div className="cell">$22.6M</div>
+                        <div className="cell">$32.9M</div>
+                        <div className="cell">$45.1M</div>
+                        <div className="cell">$61.5M</div>
+                        <div className="cell">$83.3M</div>
+                      </div>
+                      <div className="excel-row highlight">
+                        <div className="cell label">Enterprise Value</div>
+                        <div className="cell" colSpan="5">$847.2M</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="arcadeus-panel">
+                    <div className="panel-header">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                      </svg>
+                      <span>Arcadeus AI</span>
+                    </div>
+                    
+                    <div className="input-section">
+                      <h4>Model Parameters</h4>
+                      <div className="input-group">
+                        <label>Industry</label>
+                        <select>
+                          <option>SaaS Technology</option>
+                        </select>
+                      </div>
+                      <div className="input-group">
+                        <label>Revenue Growth</label>
+                        <input type="text" value="25% YoY" readOnly />
+                      </div>
+                      <div className="input-group">
+                        <label>EBITDA Margin</label>
+                        <input type="text" value="25-34%" readOnly />
+                      </div>
+                      <div className="input-group">
+                        <label>Terminal Multiple</label>
+                        <input type="text" value="6.5x" readOnly />
+                      </div>
+                    </div>
+                    
+                    <div className="ai-actions">
+                      <button className="ai-button primary">Generate Model</button>
+                      <button className="ai-button secondary">Sensitivity Analysis</button>
+                      <button className="ai-button secondary">Scenario Planning</button>
+                    </div>
+                    
+                    <div className="ai-insights">
+                      <h4>AI Insights</h4>
+                      <div className="insight">
+                        <span className="insight-icon">✓</span>
+                        <span>Model validated against 2,341 comparable transactions</span>
+                      </div>
+                      <div className="insight">
+                        <span className="insight-icon">✓</span>
+                        <span>Revenue projections align with industry benchmarks</span>
+                      </div>
+                      <div className="insight">
+                        <span className="insight-icon">!</span>
+                        <span>Consider adjusting terminal growth rate to 3%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -175,45 +448,6 @@ const Features = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          className="technology-showcase"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="tech-content">
-            <h3>Powered by Advanced Technology</h3>
-            <p>Our platform leverages cutting-edge artificial intelligence, machine learning, and natural language processing to deliver insights that traditional methods simply cannot match.</p>
-            <div className="tech-features">
-              <div className="tech-feature">
-                <span className="tech-icon">📊</span>
-                <span>Predictive Analytics</span>
-              </div>
-              <div className="tech-feature">
-                <span className="tech-icon">🧠</span>
-                <span>Machine Learning</span>
-              </div>
-              <div className="tech-feature">
-                <span className="tech-icon">📝</span>
-                <span>NLP Processing</span>
-              </div>
-              <div className="tech-feature">
-                <span className="tech-icon">☁️</span>
-                <span>Cloud Infrastructure</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="tech-visual">
-            <div className="tech-circle">
-              <div className="circle-content">
-                <div className="circle-text">AI Core</div>
-                <div className="circle-subtext">Processing Engine</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
