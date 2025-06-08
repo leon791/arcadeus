@@ -19,8 +19,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              Built for dealmakers.
-              <span className="title-highlight"> Powered by precision.</span>
+              Built for dealmakers. Powered by precision.
             </motion.h1>
             
             <motion.p 
@@ -70,6 +69,23 @@ const Hero = () => {
           <div className="stat">
             <div className="stat-number">99.7%</div>
             <div className="stat-label">Accuracy Rate</div>
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="hero-visual-integrated"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+        >
+          <div className="integrated-demo">
+            <div className="demo-placeholder">
+              <div className="placeholder-content">
+                <div className="placeholder-icon">📊</div>
+                <h3>Excel Model Integration</h3>
+                <p>Interactive demo placeholder - screenshot will be inserted here</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
