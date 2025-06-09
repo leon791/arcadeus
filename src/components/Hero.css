@@ -21,7 +21,7 @@
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: var(--font-size-hero);
   font-weight: 600;
   line-height: 1.15;
   color: #000000;
@@ -35,7 +35,7 @@
 
 .hero-subtitle {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
+  font-size: var(--font-size-body-sm);
   color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 1.75rem;
@@ -54,7 +54,7 @@
 
 .btn-large {
   padding: 16px 32px;
-  font-size: 1.1rem;
+  font-size: var(--font-size-body);
 }
 
 .hero-visual {
@@ -86,7 +86,7 @@
 .nav-item {
   padding: 8px 16px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: var(--font-size-body-sm);
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -115,18 +115,18 @@
 }
 
 .metric-label {
-  font-size: 0.9rem;
+  font-size: var(--font-size-body-sm);
   color: var(--medium-gray);
 }
 
 .metric-value {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   font-weight: 700;
   color: var(--dark-gray);
 }
 
 .metric-trend {
-  font-size: 0.85rem;
+  font-size: var(--font-size-caption);
   font-weight: 600;
 }
 
@@ -179,14 +179,14 @@
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -233,14 +233,14 @@
 
 .placeholder-content h3 {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
 .placeholder-content p {
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -263,11 +263,11 @@
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1-mobile);
   }
   
   .features-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1-mobile);
   }
   
   .visual-card {
@@ -287,15 +287,15 @@
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: var(--font-size-hero-mobile);
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
   }
   
   .features-title {
-    font-size: 2rem;
+    font-size: var(--font-size-hero-mobile);
   }
   
   .hero-actions {
@@ -321,6 +321,6 @@
   }
   
   .stat-number {
-    font-size: 2rem;
+    font-size: var(--font-size-hero-mobile);
   }
 }

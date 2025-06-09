@@ -29,7 +29,7 @@
 
 .logo-text {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: var(--font-size-h4);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -57,6 +57,7 @@
   letter-spacing: -0.01em;
   padding: 8px 16px;
   border-radius: 8px;
+  font-size: var(--font-size-body-sm);
 }
 
 .nav-link:hover {
@@ -71,7 +72,7 @@
   transition: all 0.15s ease;
   font-family: var(--font-serif);
   padding: 8px 0;
-  font-size: 0.85rem;
+  font-size: var(--font-size-caption);
 }
 
 .nav-links a:hover {
@@ -80,7 +81,7 @@
 
 .nav-right .btn {
   padding: 10px 24px;
-  font-size: 0.8rem;
+  font-size: var(--font-size-caption);
 }
 
 @media (max-width: 768px) {
@@ -93,7 +94,7 @@
   }
   
   .logo-text {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3-mobile);
   }
   
   .nav-right {
@@ -102,11 +103,11 @@
   
   .nav-right .btn {
     padding: 8px 20px;
-    font-size: 0.75rem;
+    font-size: var(--font-size-micro);
   }
   
   .nav-link {
     padding: 6px 12px;
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
   }
 }

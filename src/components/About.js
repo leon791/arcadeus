@@ -10,12 +10,6 @@ const About = () => {
     { value: '50+', label: 'Enterprise Clients' }
   ];
 
-  const certifications = [
-    { name: 'SOC 2 Type II', description: 'Security & Availability' },
-    { name: 'ISO 27001', description: 'Information Security' },
-    { name: 'GDPR', description: 'Data Protection' },
-    { name: 'PCI DSS', description: 'Payment Security' }
-  ];
 
   const team = [
     {
@@ -41,201 +35,6 @@ const About = () => {
   return (
     <section id="about" className="about section">
       <div className="container">
-        <div className="how-it-works-container">
-          <motion.div
-            className="how-it-works-left"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-title">
-              Go from 6 tools to 1.
-            </h2>
-            <p className="how-it-works-description">
-              Arcadeus streamlines your entire financial modeling workflow into one powerful platform. 
-              Follow these simple steps to transform how you build and analyze financial models.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            className="how-it-works-steps"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="steps-title">How to Generate a Model</h3>
-            
-            <div className="steps-flow">
-              <motion.div 
-                className="step-flow-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 120 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="step-circle"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="step-number">1</span>
-                </motion.div>
-                <h4 className="step-title">Download</h4>
-                <p className="step-description">Excel Plugin</p>
-              </motion.div>
-              
-              <motion.div 
-                className="flow-connector"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="connector-line"></div>
-                <motion.div 
-                  className="connector-arrow"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
-                  viewport={{ once: true }}
-                >
-                  →
-                </motion.div>
-              </motion.div>
-              
-              <motion.div 
-                className="step-flow-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.7, type: "spring", stiffness: 120 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="step-circle"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="step-number">2</span>
-                </motion.div>
-                <h4 className="step-title">Import</h4>
-                <p className="step-description">Financial Data</p>
-              </motion.div>
-              
-              <motion.div 
-                className="flow-connector"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                <div className="connector-line"></div>
-                <motion.div 
-                  className="connector-arrow"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.4 }}
-                  viewport={{ once: true }}
-                >
-                  →
-                </motion.div>
-              </motion.div>
-              
-              <motion.div 
-                className="step-flow-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.9, type: "spring", stiffness: 120 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="step-circle"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="step-number">3</span>
-                </motion.div>
-                <h4 className="step-title">Generate</h4>
-                <p className="step-description">AI Model</p>
-              </motion.div>
-              
-              <motion.div 
-                className="flow-connector"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="connector-line"></div>
-                <motion.div 
-                  className="connector-arrow"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.6 }}
-                  viewport={{ once: true }}
-                >
-                  →
-                </motion.div>
-              </motion.div>
-              
-              <motion.div 
-                className="step-flow-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.1, type: "spring", stiffness: 120 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="step-circle"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="step-number">4</span>
-                </motion.div>
-                <h4 className="step-title">Refine</h4>
-                <p className="step-description">AI LLM Enhancement</p>
-              </motion.div>
-              
-              <motion.div 
-                className="flow-connector"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="connector-line"></div>
-                <motion.div 
-                  className="connector-arrow"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.8 }}
-                  viewport={{ once: true }}
-                >
-                  →
-                </motion.div>
-              </motion.div>
-              
-              <motion.div 
-                className="step-flow-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.3, type: "spring", stiffness: 120 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="step-circle"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="step-number">5</span>
-                </motion.div>
-                <h4 className="step-title">Analyze</h4>
-                <p className="step-description">AI Deep Analysis</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
 
         <motion.div
           className="additional-features-section"
@@ -245,77 +44,104 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="feature-highlight">
-            <h3 className="feature-highlight-subtitle">LOOK MA', NO HANDS</h3>
+            <h3 className="feature-highlight-subtitle">AUTOMATED INTELLIGENCE</h3>
             <div className="feature-title-wrapper">
               <h2 className="feature-highlight-title">
-                Models built<br/>
-                instantly with AI.
+                Financial modeling<br/>
+                meets machine intelligence.
               </h2>
             </div>
             <p className="feature-highlight-description">
-              Once data is imported – models generated<br/>
-              in seconds without a single formula typed.<br/>
-              Can't miss assumptions, no calculation errors.
+              Once data is imported – comprehensive financial models are generated<br/>
+              in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
+              you can't miss critical assumptions and eliminate calculation errors entirely.
             </p>
           </div>
           
           <div className="feature-side">
-            <h3 className="feature-side-subtitle">REAL-TIME INSIGHTS</h3>
+            <h3 className="feature-side-subtitle">INSTANT EXECUTION</h3>
             <div className="feature-title-wrapper">
               <h2 className="feature-side-title">
-                Everything at<br/>
-                your fingertips.
+                Deals don't wait.<br/>
+                Neither should your model.
               </h2>
             </div>
+            <p className="feature-side-description">
+              Once data is imported – comprehensive financial models are generated<br/>
+              in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
+              you can't miss critical assumptions and eliminate calculation errors entirely.
+            </p>
           </div>
         </motion.div>
 
-        <div className="about-content">
-          <motion.div
-            className="about-story"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+        <div className="get-started-section">
+          <motion.div 
+            className="get-started-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3>Our Story</h3>
-            <p>
-              Founded in 2021 by a team of former Wall Street professionals and Silicon Valley engineers, 
-              Arcadeus emerged from a simple observation: the financial industry was drowning in data but 
-              starving for insights.
-            </p>
-            <p>
-              Having worked at top-tier investment banks and private equity firms, our founders experienced 
-              firsthand the inefficiencies of traditional financial modeling. They saw analysts spending 
-              80% of their time on data collection and formatting, leaving just 20% for actual analysis.
-            </p>
-            <p>
-              Today, Arcadeus serves leading financial institutions worldwide, processing billions in 
-              assets and enabling faster, more accurate investment decisions through the power of AI.
-            </p>
+            <h2 className="get-started-title">Get Started in 3 steps</h2>
           </motion.div>
 
+          <div className="steps-grid">
+            <motion.div
+              className="step-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="step-number-circle">1</div>
+              <h3 className="step-heading">Sign up and get started</h3>
+              <p className="step-text">
+                Sign up in seconds and start using Arcadeus for free. Get instant access to AI-powered financial models without any commitments or setup.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="step-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="step-number-circle">2</div>
+              <h3 className="step-heading">Create model</h3>
+              <p className="step-text">
+                Use AI to instantly generate financial models or create your own from scratch. Tailor models for M&A analysis, valuations, or investment decisions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="step-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="step-number-circle">3</div>
+              <h3 className="step-heading">Export in Excel</h3>
+              <p className="step-text">
+                Export your completed models directly to Excel format. Seamlessly integrate with your existing workflow and share with stakeholders in familiar spreadsheet format.
+              </p>
+            </motion.div>
+          </div>
+
           <motion.div
-            className="certifications-grid"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            className="get-started-buttons"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3>Security & Compliance</h3>
-            <div className="certifications">
-              {certifications.map((cert, index) => (
-                <div key={index} className="certification-card">
-                  <div className="cert-badge">✓</div>
-                  <div className="cert-content">
-                    <div className="cert-name">{cert.name}</div>
-                    <div className="cert-description">{cert.description}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <button className="start-free-btn">Start for free</button>
+            <button className="book-demo-btn">Book a demo</button>
           </motion.div>
         </div>
+
+
 
       </div>
     </section>
