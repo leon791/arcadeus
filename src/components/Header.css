@@ -14,6 +14,43 @@
   border-bottom: 1px solid var(--border-gray);
 }
 
+.header.inverted {
+  background: #000000;
+  border-bottom: 1px solid #333333;
+}
+
+.header.inverted .logo-text {
+  color: white;
+}
+
+.header.inverted .nav-link {
+  color: #cccccc;
+}
+
+.header.inverted .nav-link:hover {
+  color: white;
+  background: #333333;
+}
+
+.header.inverted .nav-links a {
+  color: white;
+}
+
+.header.inverted .nav-links a:hover {
+  color: #cccccc;
+}
+
+.header.inverted .btn {
+  background: white;
+  color: #000000;
+  border: 1px solid white;
+}
+
+.header.inverted .btn:hover {
+  background: #cccccc;
+  color: #000000;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -67,7 +104,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-secondary);
+  color: #000000;
   font-weight: 500;
   transition: all 0.15s ease;
   font-family: var(--font-serif);

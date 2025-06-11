@@ -95,16 +95,59 @@ const Services = () => {
   const currentContent = content[activeTab];
 
   return (
-    <motion.section 
-      id="services" 
-      className="raise-section"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      viewport={{ once: true }}
-    >
-      <div className="container">
-        <div className="raise-content">
+    <>
+      <section className="services">
+        <div className="container">
+          <motion.div
+            className="additional-features-section"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="feature-highlight">
+              <h3 className="feature-highlight-subtitle">AUTOMATED INTELLIGENCE</h3>
+              <div className="feature-title-wrapper">
+                <h2 className="feature-highlight-title">
+                  Financial modeling<br/>
+                  meets machine intelligence.
+                </h2>
+              </div>
+              <p className="feature-highlight-description">
+                Once data is imported – comprehensive financial models are generated<br/>
+                in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
+                you can't miss critical assumptions and eliminate calculation errors entirely.
+              </p>
+            </div>
+            
+            <div className="feature-side">
+              <h3 className="feature-side-subtitle">INSTANT EXECUTION</h3>
+              <div className="feature-title-wrapper">
+                <h2 className="feature-side-title">
+                  Deals don't wait.<br/>
+                  Neither should your model.
+                </h2>
+              </div>
+              <p className="feature-side-description">
+                Once data is imported – comprehensive financial models are generated<br/>
+                in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
+                you can't miss critical assumptions and eliminate calculation errors entirely.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <motion.section 
+        id="services" 
+        className="raise-section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="container">
+          <div className="raise-content">
           <div className="raise-left">
             <motion.div 
               className="total-committed-card"
@@ -119,6 +162,16 @@ const Services = () => {
           </div>
           
           <div className="raise-right">
+            <motion.h1 
+              className="raise-main-title"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Flip Raw Numbers into Closed Deals.
+            </motion.h1>
+            
             <div className="raise-tabs">
               <div className="tab-buttons">
                 <button 
@@ -201,6 +254,7 @@ const Services = () => {
         </div>
       </div>
     </motion.section>
+    </>
   );
 };
 

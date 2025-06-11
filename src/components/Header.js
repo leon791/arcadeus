@@ -3,10 +3,21 @@ import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isInverted, setIsInverted] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Check if the black section is in view
+      const blackSection = document.querySelector('.raise-section');
+      if (blackSection) {
+        const rect = blackSection.getBoundingClientRect();
+        const headerHeight = 80; // Approximate header height
+        
+        // Invert when the black section starts overlapping with the header
+        setIsInverted(rect.top <= headerHeight && rect.bottom > headerHeight);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -14,7 +25,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : ''} ${isInverted ? 'inverted' : ''}`}>
       <div className="container">
         <nav className="nav">
           <div className="nav-left">

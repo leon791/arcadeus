@@ -39,7 +39,7 @@ const Contact = () => {
         >
           <h2 className="section-title">Enterprise Solutions</h2>
           <p className="section-subtitle">
-            For teams of 10+ users seeking custom enterprise deployment. Schedule a personalized demo to explore advanced features, integrations, and tailored solutions for your organization.
+            Schedule a demo for enterprise licenses of 10+ users.
           </p>
         </motion.div>
 
@@ -52,7 +52,6 @@ const Contact = () => {
         >
             <div className="form-header">
               <h3>Request a Demo</h3>
-              <p>For enterprise deployments and custom solutions. Individual users can sign up directly without a demo.</p>
             </div>
 
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -180,52 +179,15 @@ const Contact = () => {
       </div>
 
       <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <div className="footer-logo">Arcadeus</div>
-              <p>AI-powered financial modeling for the modern investment professional.</p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="footer-column">
-                <h5>Product</h5>
-                <ul>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#features">Features</a></li>
-                  <li><a href="#pricing">Pricing</a></li>
-                  <li><a href="#integrations">Integrations</a></li>
-                </ul>
+        <div className="footer-bottom">
+          <div className="container">
+            <div className="footer-bottom-content">
+              <p>&copy; 2025 Arcadeus. All rights reserved.</p>
+              <div className="footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#cookies">Cookie Policy</a>
               </div>
-              
-              <div className="footer-column">
-                <h5>Company</h5>
-                <ul>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#careers">Careers</a></li>
-                  <li><a href="#news">News</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-column">
-                <h5>Resources</h5>
-                <ul>
-                  <li><a href="#documentation">Documentation</a></li>
-                  <li><a href="#support">Support</a></li>
-                  <li><a href="#blog">Blog</a></li>
-                  <li><a href="#security">Security</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>&copy; 2024 Arcadeus. All rights reserved.</p>
-            <div className="footer-legal">
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms of Service</a>
-              <a href="#cookies">Cookie Policy</a>
             </div>
           </div>
         </div>
