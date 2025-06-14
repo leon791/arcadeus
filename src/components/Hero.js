@@ -1,6 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
+
+const CountUpNumber = ({ end, suffix = "", prefix = "", duration = 2, delay = 0 }) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const timer = setTimeout(() => {
+      const startTime = Date.now();
+      
+      const updateCount = () => {
+        const now = Date.now();
+        const progress = Math.min((now - startTime) / (duration * 1000), 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        
+        let currentCount;
+        if (end === 2.3) {
+          // For decimal numbers like 2.3
+          currentCount = (easeOutQuart * end).toFixed(1);
+        } else if (end === 99.7) {
+          // For decimal percentages like 99.7
+          currentCount = (easeOutQuart * end).toFixed(1);
+        } else {
+          // For whole numbers like 95 and 150
+          currentCount = Math.floor(easeOutQuart * end);
+        }
+        
+        setCount(currentCount);
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          setCount(end);
+        }
+      };
+      
+      updateCount();
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [hasStarted, end, duration, delay]);
+
+  return (
+    <motion.div 
+      className="stat-number"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      onViewportEnter={() => setHasStarted(true)}
+      viewport={{ once: true }}
+    >
+      {prefix}{count}{suffix}
+    </motion.div>
+  );
+};
 
 const Hero = () => {
   return (
@@ -55,19 +112,19 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
           <div className="stat">
-            <div className="stat-number">95%</div>
+            <CountUpNumber end={95} suffix="%" duration={4} delay={0} />
             <div className="stat-label">Faster Analysis</div>
           </div>
           <div className="stat">
-            <div className="stat-number">$2.3B+</div>
+            <CountUpNumber end={2.3} prefix="$" suffix="B+" duration={4} delay={500} />
             <div className="stat-label">Assets Analyzed</div>
           </div>
           <div className="stat">
-            <div className="stat-number">150+</div>
+            <CountUpNumber end={150} suffix="+" duration={4} delay={1000} />
             <div className="stat-label">Deals Completed</div>
           </div>
           <div className="stat">
-            <div className="stat-number">99.7%</div>
+            <CountUpNumber end={99.7} suffix="%" duration={4} delay={1500} />
             <div className="stat-label">Accuracy Rate</div>
           </div>
         </motion.div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ currentPage, setCurrentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isInverted, setIsInverted] = useState(false);
 
@@ -24,17 +24,29 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, page) => {
+    e.preventDefault();
+    setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''} ${isInverted ? 'inverted' : ''}`}>
       <div className="container">
         <nav className="nav">
           <div className="nav-left">
             <div className="logo">
-              <span className="logo-text">Arcadeus</span>
+              <span 
+                className="logo-text" 
+                onClick={(e) => handleNavClick(e, 'home')}
+                style={{ cursor: 'pointer' }}
+              >
+                Arcadeus
+              </span>
             </div>
             
             <ul className="nav-links">
-              <li><a href="#product">Product</a></li>
+              <li><a href="#product" onClick={(e) => handleNavClick(e, 'product')}>Product</a></li>
               <li><a href="#solutions">Solutions</a></li>
               <li><a href="#pricing">Pricing</a></li>
             </ul>
