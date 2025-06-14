@@ -47,8 +47,8 @@ const Header = ({ currentPage, setCurrentPage }) => {
             
             <ul className="nav-links">
               <li><a href="#product" onClick={(e) => handleNavClick(e, 'product')}>Product</a></li>
-              <li><a href="#solutions">Solutions</a></li>
-              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#solutions" onClick={(e) => handleNavClick(e, 'solutions')}>Solutions</a></li>
+              <li><a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')}>Pricing</a></li>
             </ul>
           </div>
           

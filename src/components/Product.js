@@ -223,7 +223,7 @@ const Product = () => {
                   delay: 1.1
                 },
                 {
-                  number: '💎',
+                  number: '✓',
                   title: 'Valuation',
                   description: 'Professional output ready',
                   delay: 1.3,
@@ -314,19 +314,6 @@ const Product = () => {
               </div>
             </motion.div>
             
-            <motion.div
-              className="cta-testimonial"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              viewport={{ once: true }}
-            >
-              <p className="testimonial-quote">"Arcadeus reduced our modeling time from weeks to hours. Game-changing."</p>
-              <div className="testimonial-author">
-                <span className="author-name">Sarah Chen</span>
-                <span className="author-title">VP, Goldman Sachs</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>

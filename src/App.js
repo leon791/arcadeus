@@ -7,6 +7,8 @@ import Features from './components/Features';
 import About from './components/About';
 import Contact from './components/Contact';
 import Product from './components/Product';
+import Solutions from './components/Solutions';
+import Pricing from './components/Pricing';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -18,6 +20,20 @@ function App() {
           <>
             <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <Product />
+          </>
+        );
+      case 'solutions':
+        return (
+          <>
+            <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <Solutions />
+          </>
+        );
+      case 'pricing':
+        return (
+          <>
+            <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <Pricing />
           </>
         );
       case 'home':

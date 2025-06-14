@@ -1,0 +1,449 @@
+.solutions-page {
+  padding-top: 80px; /* Account for fixed header */
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.solutions-hero {
+  padding: 6rem 0 4rem 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+.solutions-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-hero);
+  font-weight: 300;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.solutions-subtitle {
+  font-family: var(--font-text);
+  font-size: var(--font-size-h4);
+  color: #666666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Solution Sections */
+.solution-section {
+  padding: 7rem 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient overlays for depth */
+.solution-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.solution-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Alternating layout */
+.left-aligned .solution-row {
+  grid-template-areas: "content visual";
+}
+
+.right-aligned .solution-row {
+  grid-template-areas: "visual content";
+}
+
+.left-aligned .solution-content {
+  grid-area: content;
+}
+
+.left-aligned .solution-visual {
+  grid-area: visual;
+}
+
+.right-aligned .solution-content {
+  grid-area: content;
+}
+
+.right-aligned .solution-visual {
+  grid-area: visual;
+}
+
+.solution-content {
+  max-width: 500px;
+}
+
+.left-aligned .solution-content {
+  margin-right: auto;
+}
+
+.right-aligned .solution-content {
+  margin-left: auto;
+}
+
+.solution-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.solution-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h1);
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtle glow effect on hover */
+.solution-content:hover .solution-title {
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: text-shadow 0.4s ease;
+}
+
+.solution-subtitle {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  color: #666666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.solution-description {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.solution-features,
+.solution-benefits {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.solution-features h3,
+.solution-benefits h3 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h4);
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.solution-features ul,
+.solution-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.solution-features li,
+.solution-benefits li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  color: #333333;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  animation: checkPulse 2s ease-in-out infinite;
+}
+
+.bullet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+@keyframes checkPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Hover effect for list items */
+.solution-features li:hover,
+.solution-benefits li:hover {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.solution-features li:hover .checkmark {
+  animation-duration: 0.5s;
+}
+
+/* Solution Visual */
+.solution-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solution-image {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.image-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.enterprise-icon {
+  color: #2563eb;
+}
+
+.professional-icon {
+  color: #dc2626;
+}
+
+.education-icon {
+  color: #059669;
+}
+
+.image-placeholder-text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h4);
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.image-description {
+  font-size: var(--font-size-body-sm);
+  color: #6b7280;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+/* CTA Section */
+.solutions-cta {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  text-align: center;
+  color: #000000;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.solutions-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.solutions-cta .cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.solutions-cta h2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h1);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.solutions-cta p {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  color: #666666;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.solutions-cta .btn-primary {
+  background: #000000;
+  color: #ffffff;
+  padding: 16px 32px;
+  font-size: var(--font-size-body);
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: 2px solid #000000;
+}
+
+.solutions-cta .btn-primary:hover {
+  background: #333333;
+  border-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.solutions-cta .btn-secondary {
+  background: transparent;
+  color: #000000;
+  padding: 16px 32px;
+  font-size: var(--font-size-body);
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.solutions-cta .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .solution-row {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-hero {
+    padding: 4rem 0 3rem 0;
+  }
+  
+  .solutions-title {
+    font-size: var(--font-size-hero-mobile);
+  }
+  
+  .solutions-subtitle {
+    font-size: var(--font-size-body);
+  }
+  
+  .solution-section {
+    padding: 3rem 0;
+  }
+  
+  .solution-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Reset alternating layout on mobile */
+  .left-aligned .solution-row,
+  .right-aligned .solution-row {
+    grid-template-areas: 
+      "content"
+      "visual";
+  }
+  
+  .solution-content {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .solution-header {
+    text-align: center;
+  }
+  
+  .solution-title {
+    font-size: var(--font-size-h1-mobile);
+  }
+  
+  .solution-description {
+    font-size: var(--font-size-body-sm);
+    text-align: center;
+  }
+  
+  .solution-features,
+  .solution-benefits {
+    padding: 0 1rem;
+  }
+  
+  .solution-features li,
+  .solution-benefits li {
+    font-size: var(--font-size-body-sm);
+  }
+  
+  .solution-image {
+    height: 300px;
+    padding: 2rem 1.5rem;
+  }
+  
+  .solutions-cta {
+    padding: 5rem 0;
+  }
+  
+  .solutions-cta h2 {
+    font-size: var(--font-size-h1-mobile);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .solutions-cta .btn-primary,
+  .solutions-cta .btn-secondary {
+    width: 280px;
+    text-align: center;
+  }
+}
