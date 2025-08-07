@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { signOut } from '../firebase/auth';
 import './Header.css';
 
 const Header = ({ currentPage, setCurrentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isInverted, setIsInverted] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const { user, isAuthenticated, userName, userPhoto } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +34,30 @@ const Header = ({ currentPage, setCurrentPage }) => {
     window.scrollTo(0, 0);
   };
 
+  const handleSignOut = async () => {
+    const result = await signOut();
+    if (result.success) {
+      setShowUserMenu(false);
+      setCurrentPage('home');
+    }
+  };
+
+  const toggleUserMenu = () => {
+    setShowUserMenu(!showUserMenu);
+  };
+
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showUserMenu && !event.target.closest('.user-menu-container')) {
+        setShowUserMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showUserMenu]);
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''} ${isInverted ? 'inverted' : ''}`}>
       <div className="container">
@@ -53,8 +81,52 @@ const Header = ({ currentPage, setCurrentPage }) => {
           </div>
           
           <div className="nav-right">
-            <a href="#login" className="nav-link">Log In</a>
-            <a href="#signup" className="btn btn-primary">Sign Up</a>
+            {isAuthenticated ? (
+              <div className="user-menu-container">
+                <button className="user-button" onClick={toggleUserMenu}>
+                  {userPhoto ? (
+                    <img src={userPhoto} alt="User" className="user-avatar" />
+                  ) : (
+                    <div className="user-avatar-placeholder">
+                      {userName?.charAt(0)?.toUpperCase() || 'U'}
+                    </div>
+                  )}
+                  <span className="user-name">{userName}</span>
+                  <svg 
+                    className={`dropdown-arrow ${showUserMenu ? 'rotated' : ''}`}
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 12 12"
+                  >
+                    <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  </svg>
+                </button>
+                
+                {showUserMenu && (
+                  <div className="user-dropdown">
+                    <div className="user-info">
+                      <div className="user-email">{user?.email}</div>
+                    </div>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item" onClick={() => setCurrentPage('profile')}>
+                      Profile
+                    </button>
+                    <button className="dropdown-item" onClick={() => setCurrentPage('settings')}>
+                      Settings
+                    </button>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item sign-out" onClick={handleSignOut}>
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <a href="#login" className="nav-link" onClick={(e) => handleNavClick(e, 'auth')}>Log In</a>
+                <a href="#signup" className="btn btn-primary" onClick={(e) => handleNavClick(e, 'auth')}>Sign Up</a>
+              </>
+            )}
           </div>
         </nav>
       </div>

@@ -121,6 +121,142 @@
   font-size: var(--font-size-caption);
 }
 
+/* Authentication Styles */
+.user-menu-container {
+  position: relative;
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+}
+
+.user-button:hover {
+  background: var(--light-blue);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-gray);
+}
+
+.user-avatar-placeholder {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-name {
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+  color: var(--dark-gray);
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  padding: 8px 0;
+  z-index: 1001;
+}
+
+.user-info {
+  padding: 12px 16px;
+}
+
+.user-email {
+  font-size: var(--font-size-body-sm);
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--border-gray);
+  margin: 8px 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-serif);
+}
+
+.dropdown-item:hover {
+  background: var(--light-blue);
+}
+
+.dropdown-item.sign-out {
+  color: #dc2626;
+}
+
+.dropdown-item.sign-out:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+/* Inverted header auth styles */
+.header.inverted .user-button {
+  color: white;
+}
+
+.header.inverted .user-button:hover {
+  background: #333333;
+}
+
+.header.inverted .dropdown-arrow {
+  color: #cccccc;
+}
+
+.header.inverted .user-avatar-placeholder {
+  background: white;
+  color: #000000;
+}
+
 @media (max-width: 768px) {
   .nav-left {
     gap: 2rem;
