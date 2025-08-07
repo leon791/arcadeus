@@ -1,94 +1,105 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Pricing.css';
 
 const Pricing = () => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   const pricingTiers = [
     {
-      id: 'lite',
-      name: 'Finance Professional Lite',
-      subtitle: 'Essential tools for getting started',
-      price: '$49',
+      id: 'pro',
+      name: 'Pro',
+      price: isAnnual ? 32 : 40,
+      originalPrice: isAnnual ? 480 : null,
       period: '/month',
-      description: 'Core features to begin your financial modeling journey',
+      description: 'For most users',
+      subtitle: 'Powerful but prone to mistakes.',
+      detailText: 'For casual Excel users and AI enthusiasts. Supports our Base model. More powerful than Gemini/Copilot, but may make mistakes and is not nearly as strong as Max.',
       features: [
-        'Up to 10 models per month',
-        'Basic AI formula suggestions',
-        'Standard templates library',
-        'Excel integration plugin'
+        'Unlimited messages & actions',
+        '2 Max model uses per day',
+        'Access to our Base model'
       ],
-      buttonText: 'Start Free Trial',
+      buttonText: 'Start 7-day free trial',
       buttonType: 'secondary',
       popular: false
     },
     {
-      id: 'expert',
-      name: 'Finance Professional Expert',
-      subtitle: 'Advanced tools for finance professionals',
-      price: '$149',
+      id: 'max',
+      name: 'Max',
+      price: isAnnual ? 160 : 200,
+      originalPrice: isAnnual ? 2400 : null,
       period: '/month',
-      description: 'Complete professional suite with advanced capabilities',
+      description: 'For power users & professionals',
+      subtitle: 'Powered by our strongest AI model.',
+      detailText: 'For professional users and people at the AI frontier looking for the strongest Excel/Spreadsheet agent in the world.',
       features: [
-        'Unlimited model creation',
-        'Advanced AI-powered suggestions',
-        'Premium templates library'
+        'Everything in Pro',
+        'Unlimited Access to our Max model',
+        'Unlimited actions and messages'
       ],
-      buttonText: 'Start Free Trial',
+      additionalText: 'Max provides access to our Analyst Mode Beta.',
+      buttonText: 'Start 7-day free trial',
       buttonType: 'primary',
-      popular: true
+      popular: true,
+      badge: 'Most Powerful'
     },
     {
-      id: 'education',
-      name: 'Education',
-      subtitle: 'Tailored for academic institutions',
-      price: 'Custom',
-      period: '',
-      description: 'Comprehensive solutions for educational excellence',
+      id: 'teams',
+      name: 'Teams',
+      price: isAnnual ? 400 : 500,
+      originalPrice: isAnnual ? 6000 : null,
+      period: '/month/seat',
+      description: 'For teams & businesses',
+      subtitle: 'Zero Data Retention and Zero Training (in partnership with Anthropic)',
+      detailText: 'Perfect for teams and businesses. Get Max-level access with year-end pricing, team collaboration features, and direct founder access. Try it risk-free for 7 days.',
       features: [
-        'Curriculum integration support',
-        'Student progress tracking',
-        'Bulk licensing discounts',
-        'Instructor training programs'
+        'Everything in Max',
+        'Enterprise Grade Security',
+        'Direct access to Shortcut Founders'
       ],
-      buttonText: 'Contact Sales',
+      buttonText: 'Start Team Free Trial',
       buttonType: 'secondary',
-      popular: false
-    },
-    {
-      id: 'enterprise',
-      name: 'Enterprise Licenses',
-      subtitle: 'Scale across your organization',
-      price: 'Custom',
-      period: '',
-      description: 'Advanced features for large-scale operations',
-      features: [
-        'Unlimited team members',
-        'Advanced security & compliance',
-        'Custom integrations',
-        'Dedicated account manager'
-      ],
-      buttonText: 'Contact Sales',
-      buttonType: 'secondary',
-      popular: false
+      popular: false,
+      badge: 'Enterprise Security'
     }
   ];
 
   return (
     <div className="pricing-page">
+      <div className="rainbow-background"></div>
+      
       <section className="pricing-hero">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="hero-content"
           >
-            <h1 className="pricing-title">
-              Choose Your Plan
-            </h1>
-            <p className="pricing-subtitle">
-              Flexible pricing options designed to grow with your needs. 
-              Start with a free trial and upgrade anytime.
-            </p>
+            <button className="close-button">×</button>
+            <h1 className="pricing-title">Choose Your Plan</h1>
+            <p className="pricing-subtitle">Select the plan that best fits your needs.</p>
+            
+            <div className="billing-toggle">
+              <label className="toggle-label">
+                <input
+                  type="checkbox"
+                  checked={isAnnual}
+                  onChange={(e) => setIsAnnual(e.target.checked)}
+                  className="toggle-input"
+                />
+                <span className="toggle-slider">
+                  <span className="toggle-option">Quarterly</span>
+                  <span className="toggle-option">Annual</span>
+                </span>
+              </label>
+              {isAnnual && (
+                <div className="savings-text">
+                  (Save £1,200/year per seat)
+                </div>
+              )}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -99,76 +110,59 @@ const Pricing = () => {
             {pricingTiers.map((tier, index) => (
               <motion.div
                 key={tier.id}
-                className={`pricing-card ${tier.popular ? 'popular' : ''}`}
+                className={`pricing-card ${tier.popular ? 'popular' : ''} ${tier.id === 'teams' ? 'teams-card' : ''}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                {tier.popular && (
-                  <div className="popular-badge">
-                    Most Popular
+                {tier.badge && (
+                  <div className={`plan-badge ${tier.id === 'max' ? 'badge-purple' : 'badge-green'}`}>
+                    {tier.badge}
                   </div>
                 )}
                 
-                <div className="card-header">
-                  <h3 className="tier-name">{tier.name}</h3>
-                  <p className="tier-subtitle">{tier.subtitle}</p>
-                  
-                  <div className="pricing-info">
-                    <span className="price">{tier.price}</span>
-                    <span className="period">{tier.period}</span>
+                <div className="card-content">
+                  <div className="plan-header">
+                    <h3 className="plan-name">{tier.name}</h3>
+                    
+                    <div className="price-section">
+                      <div className="price-container">
+                        <span className="currency">£</span>
+                        <span className="price">{tier.price}</span>
+                        <span className="period">{tier.period}</span>
+                      </div>
+                    </div>
+                    
+                    <p className="plan-description">{tier.description}</p>
                   </div>
-                  
-                  <p className="tier-description">{tier.description}</p>
-                </div>
 
-                <div className="card-body">
-                  <ul className="features-list">
-                    {tier.features.map((feature, idx) => (
-                      <li key={idx} className="feature-item">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="plan-body">
+                    <p className="plan-subtitle">{tier.subtitle}</p>
+                    <p className="plan-detail">{tier.detailText}</p>
+                    
+                    <ul className="features-list">
+                      {tier.features.map((feature, idx) => (
+                        <li key={idx} className="feature-item">
+                          <span className="checkmark">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {tier.additionalText && (
+                      <p className="additional-text">{tier.additionalText}</p>
+                    )}
+                  </div>
 
-                <div className="card-footer">
-                  <button 
-                    className={`pricing-btn ${tier.buttonType === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
-                  >
-                    {tier.buttonText}
-                  </button>
+                  <div className="card-footer">
+                    <button className={`cta-button ${tier.buttonType}`}>
+                      {tier.buttonText}
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="pricing-faq">
-        <div className="container">
-          <motion.div
-            className="faq-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2>Questions? We're here to help.</h2>
-            <p>
-              Need a custom solution or have questions about our pricing? 
-              Our team is ready to help you find the perfect plan.
-            </p>
-            
-            <div className="faq-buttons">
-              <a href="#contact" className="btn btn-primary">
-                Contact Sales
-              </a>
-              <a href="#support" className="btn btn-secondary">
-                View FAQ
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
