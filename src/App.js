@@ -11,6 +11,7 @@ import Product from './components/Product';
 import Solutions from './components/Solutions';
 import Pricing from './components/Pricing';
 import Auth from './components/Auth';
+import Install from './components/Install';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -45,6 +46,13 @@ function App() {
             <Auth setCurrentPage={setCurrentPage} />
           </>
         );
+      case 'install':
+        return (
+          <>
+            <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <Install />
+          </>
+        );
       case 'profile':
         return (
           <>
@@ -70,7 +78,7 @@ function App() {
         return (
           <>
             <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <Hero />
+            <Hero setCurrentPage={setCurrentPage} />
             <Services />
             <About />
             <Contact />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useAuth } from '../contexts/AuthContext';
 import './Hero.css';
 
 const CountUpNumber = ({ end, suffix = "", prefix = "", duration = 2, delay = 0 }) => {
@@ -59,7 +60,19 @@ const CountUpNumber = ({ end, suffix = "", prefix = "", duration = 2, delay = 0 
   );
 };
 
-const Hero = () => {
+const Hero = ({ setCurrentPage }) => {
+  const { isAuthenticated } = useAuth();
+
+  const handleDownloadClick = () => {
+    if (!isAuthenticated) {
+      // Redirect to auth if not logged in
+      setCurrentPage('auth');
+    } else {
+      // Redirect to installation page if authenticated
+      setCurrentPage('install');
+    }
+  };
+
   return (
     <section className="hero">
       <div className="container">
@@ -95,10 +108,21 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              <a href="#contact" className="btn btn-primary btn-large">
+              <button 
+                onClick={handleDownloadClick}
+                className="btn btn-primary btn-large download-btn"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Add-In
+              </button>
+              <a href="#contact" className="btn btn-secondary btn-large">
                 Request Demo
               </a>
-              <a href="#services" className="btn btn-secondary btn-large">
+              <a href="#services" className="btn btn-outline btn-large">
                 Learn More
               </a>
             </motion.div>
