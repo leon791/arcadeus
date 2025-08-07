@@ -42,7 +42,7 @@ function App() {
         return (
           <>
             <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <Auth />
+            <Auth setCurrentPage={setCurrentPage} />
           </>
         );
       case 'profile':

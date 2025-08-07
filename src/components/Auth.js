@@ -4,7 +4,7 @@ import { signInWithGoogle, signInWithEmail, registerWithEmail } from '../firebas
 import { useAuth } from '../contexts/AuthContext';
 import './Auth.css';
 
-const Auth = () => {
+const Auth = ({ setCurrentPage }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +16,9 @@ const Auth = () => {
     const result = await signInWithGoogle();
     if (!result.success) {
       setError(result.error);
+    } else {
+      // Redirect to home page on successful login
+      setCurrentPage('home');
     }
     setLoading(false);
   };
@@ -34,6 +37,9 @@ const Auth = () => {
     
     if (!result.success) {
       setError(result.error);
+    } else {
+      // Redirect to home page on successful login/registration
+      setCurrentPage('home');
     }
     setLoading(false);
   };
