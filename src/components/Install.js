@@ -115,95 +115,118 @@ const Install = () => {
   const steps = [
     {
       title: "Download Manifest File",
-      description: "First, download the Arcadeus manifest.xml file to your computer.",
+      description: "Download the Arcadeus manifest.xml file to your computer. This file contains the configuration needed to install the Excel add-in.",
       action: (
-        <button className="btn btn-primary btn-large" onClick={downloadManifest}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7,10 12,15 17,10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download manifest.xml
-        </button>
+        <div className="step-actions">
+          <button className="btn btn-primary btn-large" onClick={downloadManifest}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download manifest.xml
+          </button>
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(1)}
+          >
+            Skip to Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Open Excel Online",
-      description: "Go to Excel Online (office.com) and sign in with your Microsoft account. Do NOT use the desktop Excel app.",
+      description: "Navigate to Excel Online at office.com and sign in with your Microsoft account. Important: You must use Excel Online (web version), not the desktop Excel application.",
       action: (
-        <a 
-          href="https://www.office.com/launch/excel" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn btn-primary btn-large"
-          onClick={() => setCurrentStep(2)}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15,3 21,3 21,9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-          Open Excel Online
-        </a>
+        <div className="step-actions">
+          <a 
+            href="https://www.office.com/launch/excel" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-primary btn-large"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15,3 21,3 21,9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Open Excel Online
+          </a>
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(2)}
+          >
+            Skip to Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Find Add-ins Button",
-      description: "In Excel Online, look for the Add-ins icon in the ribbon at the top. It looks like a puzzle piece or building blocks.",
+      description: "Look for the Add-ins icon in the Excel Online ribbon at the top of the page. The icon typically looks like puzzle pieces or building blocks and is located in the main toolbar.",
       action: (
-        <button 
-          className="btn btn-outline btn-large" 
-          onClick={() => setCurrentStep(3)}
-        >
-          Next Step
-        </button>
+        <div className="step-actions">
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(3)}
+          >
+            Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Click More Add-ins",
-      description: "Click the Add-ins button, then click '+ More Add-ins' or 'Get Add-ins' from the dropdown menu.",
+      description: "Click on the Add-ins button you just found, then select 'More Add-ins' or 'Get Add-ins' from the dropdown menu that appears.",
       action: (
-        <button 
-          className="btn btn-outline btn-large" 
-          onClick={() => setCurrentStep(4)}
-        >
-          Next Step
-        </button>
+        <div className="step-actions">
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(4)}
+          >
+            Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Access My Add-ins",
-      description: "In the Office Add-ins store, click on 'My Add-ins' tab at the top of the dialog.",
+      description: "In the Office Add-ins store dialog that opens, look for and click on the 'My Add-ins' tab at the top of the window.",
       action: (
-        <button 
-          className="btn btn-outline btn-large" 
-          onClick={() => setCurrentStep(5)}
-        >
-          Next Step
-        </button>
+        <div className="step-actions">
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(5)}
+          >
+            Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Upload Manifest File",
-      description: "In the My Add-ins section, click 'Upload My Add-in' in the top right corner, then select the manifest.xml file you downloaded.",
+      description: "In the My Add-ins section, locate and click the 'Upload My Add-in' button in the top right corner. Then browse and select the manifest.xml file you downloaded in step 1.",
       action: (
-        <button 
-          className="btn btn-outline btn-large" 
-          onClick={() => setCurrentStep(6)}
-        >
-          Next Step
-        </button>
+        <div className="step-actions">
+          <button 
+            className="btn btn-outline btn-large" 
+            onClick={() => setCurrentStep(6)}
+          >
+            Next Step
+          </button>
+        </div>
       ),
       image: "/api/placeholder/400/300"
     },
     {
       title: "Login to Arcadeus",
-      description: `Once the add-in is installed, it will appear in your ribbon. Click it to open the Arcadeus panel and login with the same account you used for this website: ${user?.email}`,
+      description: `The add-in is now installed and will appear in your Excel ribbon. Click the Arcadeus button to open the panel and login using the same account you used for this website: ${user?.email}`,
       action: (
         <div className="completion-message">
           <div className="success-icon">✅</div>
@@ -216,8 +239,20 @@ const Install = () => {
   ];
 
   const goToStep = (stepIndex) => {
-    if (stepIndex <= currentStep || stepIndex === 0) {
+    if (stepIndex >= 0 && stepIndex < steps.length) {
       setCurrentStep(stepIndex);
+    }
+  };
+
+  const nextStep = () => {
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
     }
   };
 
@@ -247,9 +282,8 @@ const Install = () => {
               {steps.map((step, index) => (
                 <button
                   key={index}
-                  className={`step-item ${index === currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''} ${index > currentStep ? 'disabled' : ''}`}
+                  className={`step-item ${index === currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''}`}
                   onClick={() => goToStep(index)}
-                  disabled={index > currentStep && index !== 0}
                 >
                   <div className="step-number">
                     {index < currentStep ? '✓' : index + 1}
@@ -261,6 +295,34 @@ const Install = () => {
           </div>
 
           <div className="step-content">
+            <div className="step-navigation">
+              <button 
+                className={`nav-btn prev-btn ${currentStep === 0 ? 'disabled' : ''}`}
+                onClick={prevStep}
+                disabled={currentStep === 0}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+                Previous
+              </button>
+              
+              <span className="step-counter">
+                Step {currentStep + 1} of {steps.length}
+              </span>
+              
+              <button 
+                className={`nav-btn next-btn ${currentStep === steps.length - 1 ? 'disabled' : ''}`}
+                onClick={nextStep}
+                disabled={currentStep === steps.length - 1}
+              >
+                Next
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+              </button>
+            </div>
+
             <motion.div
               key={currentStep}
               className="current-step"
