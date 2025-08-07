@@ -79,10 +79,10 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.step-item.active {
+.step-item.current {
   border-color: #1a1a1a;
-  background: #1a1a1a;
-  color: white;
+  background: white;
+  color: #1a1a1a;
 }
 
 .step-item.completed {
@@ -94,7 +94,6 @@
   background: #10b981;
   color: white;
 }
-
 
 .step-number {
   width: 32px;
@@ -110,9 +109,9 @@
   flex-shrink: 0;
 }
 
-.step-item.active .step-number {
-  background: white;
-  color: #1a1a1a;
+.step-item.current .step-number {
+  background: #1a1a1a;
+  color: white;
 }
 
 .step-title {
@@ -236,27 +235,16 @@
   object-fit: cover;
 }
 
-.completion-message {
-  text-align: center;
-  padding: 20px;
-}
-
-.success-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.completion-message h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #10b981;
-  margin: 0 0 12px 0;
-}
-
-.completion-message p {
+.final-step-text {
   font-size: 16px;
-  color: #666;
+  color: #10b981;
+  font-weight: 600;
   margin: 0;
+  padding: 20px;
+  text-align: center;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #bbf7d0;
 }
 
 /* Responsive Design */

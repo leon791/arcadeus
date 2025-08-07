@@ -126,12 +126,6 @@ const Install = () => {
             </svg>
             Download manifest.xml
           </button>
-          <button 
-            className="btn btn-outline btn-large" 
-            onClick={() => setCurrentStep(1)}
-          >
-            Skip to Next Step
-          </button>
         </div>
       ),
       image: "/api/placeholder/400/300"
@@ -148,18 +142,12 @@ const Install = () => {
             className="btn btn-primary btn-large"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1-2-2h6"/>
               <polyline points="15,3 21,3 21,9"/>
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
             Open Excel Online
           </a>
-          <button 
-            className="btn btn-outline btn-large" 
-            onClick={() => setCurrentStep(2)}
-          >
-            Skip to Next Step
-          </button>
         </div>
       ),
       image: "/api/placeholder/400/300"
@@ -228,10 +216,8 @@ const Install = () => {
       title: "Login to Arcadeus",
       description: `The add-in is now installed and will appear in your Excel ribbon. Click the Arcadeus button to open the panel and login using the same account you used for this website: ${user?.email}`,
       action: (
-        <div className="completion-message">
-          <div className="success-icon">✅</div>
-          <h3>Installation Complete!</h3>
-          <p>You can now use Arcadeus AI in your Excel spreadsheets.</p>
+        <div className="step-actions">
+          <p className="final-step-text">You can now use Arcadeus AI in your Excel spreadsheets!</p>
         </div>
       ),
       image: "/api/placeholder/400/300"
@@ -282,7 +268,7 @@ const Install = () => {
               {steps.map((step, index) => (
                 <button
                   key={index}
-                  className={`step-item ${index === currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''}`}
+                  className={`step-item ${index === currentStep ? 'current' : ''} ${index < currentStep ? 'completed' : ''}`}
                   onClick={() => goToStep(index)}
                 >
                   <div className="step-number">
