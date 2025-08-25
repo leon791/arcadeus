@@ -8,19 +8,23 @@ function App() {
     <AuthProvider>
       <div className="App">
         {/* Simplified Header - Only Logo */}
-        <header style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '80px',
-          backgroundColor: '#fff',
-          borderBottom: '1px solid #eee',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '0 60px',
-          zIndex: 1000
-        }}>
+        <header 
+          className="header-responsive"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '80px',
+            backgroundColor: '#fff',
+            borderBottom: '1px solid #eee',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            padding: '0 60px',
+            zIndex: 1000
+          }}
+        >
           <img 
             src="/arcadeus-logo-black-on-white-simple.svg" 
             alt="Arcadeus" 

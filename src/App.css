@@ -133,6 +133,11 @@ html {
   border-color: var(--text-primary);
 }
 
+/* Header responsive styling */
+.header-responsive {
+  justify-content: flex-start;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .section {
@@ -145,5 +150,10 @@ html {
   
   .container {
     padding: 0 16px;
+  }
+  
+  .header-responsive {
+    justify-content: center !important;
+    padding: 0 20px !important;
   }
 }
