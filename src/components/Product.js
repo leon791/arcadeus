@@ -305,7 +305,7 @@ const Product = () => {
               <p>Join leading PE firms, investment banks, and hedge funds using Arcadeus</p>
               
               <div className="cta-buttons">
-                <a href="#contact" className="btn btn-primary btn-large">
+                <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
                   Request a Demo
                 </a>
                 <a href="#trial" className="btn btn-secondary btn-large">

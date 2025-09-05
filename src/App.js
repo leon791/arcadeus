@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Product from './components/Product';
 import Solutions from './components/Solutions';
 import Pricing from './components/Pricing';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,14 +37,16 @@ function App() {
             <Pricing />
           </>
         );
+      case 'privacy-policy':
+        return <PrivacyPolicy setCurrentPage={setCurrentPage} />;
       case 'home':
       default:
         return (
           <>
             <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <Hero />
+            <Hero setCurrentPage={setCurrentPage} />
             <Services />
-            <About />
+            <About setCurrentPage={setCurrentPage} />
             <Contact />
           </>
         );

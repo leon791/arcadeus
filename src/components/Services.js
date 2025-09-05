@@ -56,14 +56,14 @@ const Services = () => {
 
   const content = {
     EXCEL_INTEGRATION: {
-      icon: '📊',
+      icon: 'excel',
       title: 'Integrate',
       subtitle: 'Seamless Excel plugin for\nprofessional financial modeling',
-      description: 'Install our Excel add-in, access model templates,\nautomatically populate data, generate formulas,\ncreate formatted reports, and export\nprofessional-grade financial models.',
+      description: 'Install our Excel add-in, automatically populate data, generate formulas,\ncreate formatted reports, and export professional-grade financial models.',
       footnote: '* Compatible with Excel 2016 and newer'
     },
     AI_CHAT: {
-      icon: '🤖',
+      icon: '☁️',
       title: 'Converse',
       subtitle: 'Intelligent AI assistant for\nfinancial modeling guidance',
       description: 'Ask questions about your models, get instant\nanswers on assumptions, receive formula suggestions,\ntroubleshoot errors, optimize structures,\nand learn best practices through conversation.',
@@ -106,32 +106,30 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <div className="feature-highlight">
-              <h3 className="feature-highlight-subtitle">AUTOMATED INTELLIGENCE</h3>
+              <h3 className="feature-highlight-subtitle">REAL TIME AUTOMATION</h3>
               <div className="feature-title-wrapper">
                 <h2 className="feature-highlight-title">
-                  Financial modeling<br/>
-                  meets machine intelligence.
+                  Early-Stage Deal Evaluation
                 </h2>
               </div>
               <p className="feature-highlight-description">
-                Once data is imported – comprehensive financial models are generated<br/>
-                in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
-                you can't miss critical assumptions and eliminate calculation errors entirely.
+                Once data is imported, comprehensive financial models are generated<br/>
+                in seconds—without a single formula typed. AI algorithms ensure you don't miss
+                critical assumptions and provide an overview of estimated returns<br/>
+                per deal, enabling decision-makers to determine whether to proceed to due diligence or decline.
               </p>
             </div>
             
             <div className="feature-side">
-              <h3 className="feature-side-subtitle">INSTANT EXECUTION</h3>
+              <h3 className="feature-side-subtitle">MARKET INTELLIGENCE</h3>
               <div className="feature-title-wrapper">
                 <h2 className="feature-side-title">
-                  Deals don't wait.<br/>
-                  Neither should your model.
+                  Stay ahead with AI-driven insight
                 </h2>
               </div>
               <p className="feature-side-description">
-                Once data is imported – comprehensive financial models are generated<br/>
-                in seconds without a single formula typed. Advanced AI algorithms ensure<br/>
-                you can't miss critical assumptions and eliminate calculation errors entirely.
+                Combine historical market insights and financial theory with AI reasoning
+                to make decisions, audit assumptions, and evaluate return drivers.
               </p>
             </div>
           </motion.div>
@@ -157,7 +155,30 @@ const Services = () => {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <div className="card-icon">{currentContent.icon}</div>
+              <div className="card-icon">
+                {currentContent.icon === 'excel' ? (
+                  <svg width="96" height="96" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                    {/* Background lighter white sheet */}
+                    <rect x="256" y="0" width="768" height="768" rx="128" fill="white" fillOpacity="0.3"/>
+                    
+                    {/* Middle white sheet */}
+                    <rect x="128" y="128" width="768" height="768" rx="128" fill="white" fillOpacity="0.5"/>
+                    
+                    {/* Front white sheet with X */}
+                    <rect x="0" y="256" width="768" height="768" rx="128" fill="white"/>
+                    
+                    {/* Green X letter */}
+                    <path d="M200 450 L350 640 L200 830 L280 830 L400 680 L520 830 L600 830 L450 640 L600 450 L520 450 L400 600 L280 450 Z" fill="#107C41"/>
+                  </svg>
+                ) : currentContent.icon === 'chat' ? (
+                  <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                    {/* Professional cloud shape */}
+                    <path d="M25 55 Q25 45 35 45 Q35 35 45 35 Q48 28 58 28 Q68 28 70 35 Q80 35 80 45 Q80 55 70 55 Z" fill="white"/>
+                  </svg>
+                ) : (
+                  currentContent.icon
+                )}
+              </div>
             </motion.div>
           </div>
           

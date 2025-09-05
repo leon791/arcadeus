@@ -12,6 +12,7 @@ const Contact = () => {
     assetsUnderManagement: '',
     teamSize: ''
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -20,17 +21,97 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Thank you for your enterprise inquiry! Our sales team will contact you within 24 hours to schedule a personalized demo.');
+    
+    // For Netlify Forms submission
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    };
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ 
+          "form-name": "demo-request",
+          ...formData 
+        })
+      });
+      
+      // Show success screen
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        role: '',
+        message: '',
+        assetsUnderManagement: '',
+        teamSize: ''
+      });
+      
+      // Hide success screen after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
+    } catch (error) {
+      alert('There was an error submitting your request. Please try again or email us directly at info@arcadeus.ai');
+    }
   };
 
 
   return (
-    <section id="contact" className="contact section">
-      <div className="container">
+    <>
+      {/* Success Screen Overlay */}
+      {showSuccess && (
+        <motion.div 
+          className="success-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div 
+            className="success-content"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <h2 className="success-title">Thank You!</h2>
+              <p className="success-message">
+                Your demo request has been received.<br/>
+                Our team will be in contact within 24 hours.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="success-logo"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <img 
+                src="/arcadeus-logo-black-on-white-simple.svg" 
+                alt="Arcadeus" 
+                className="success-logo-img"
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      <section id="contact" className="contact section">
+        <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +135,8 @@ const Contact = () => {
               <h3>Request a Demo</h3>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" name="demo-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+              <input type="hidden" name="form-name" value="demo-request" />
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
@@ -193,6 +275,7 @@ const Contact = () => {
         </div>
       </footer>
     </section>
+    </>
   );
 };
 

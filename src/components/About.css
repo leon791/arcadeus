@@ -11,17 +11,7 @@
   position: relative;
 }
 
-.privacy-icon {
-  width: 80px;
-  height: 80px;
-  background: #000000;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 2rem;
-  font-size: 2rem;
-}
+/* .privacy-icon removed - no longer using lock icon */
 
 .privacy-title {
   font-family: var(--font-serif);
@@ -99,21 +89,27 @@
 }
 
 .privacy-link {
-  color: #1a1a1a;
+  color: #107C41;
   text-decoration: underline;
-  transition: opacity 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .privacy-link:hover {
-  opacity: 0.7;
+  color: #0d5c2f;
 }
 
 /* Get Started Section */
 .get-started-section {
   background: var(--light-gray);
-  padding: 5rem 0;
-  margin: 4rem 0;
+  padding: 2rem 0 5rem 0;
+  margin: 0;
 }
 
 .get-started-header {

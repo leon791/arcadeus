@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
 
-const About = () => {
+const About = ({ setCurrentPage }) => {
   const metrics = [
     { value: '$2.3B+', label: 'Assets Under Analysis' },
     { value: '150+', label: 'Successful Deals' },
@@ -44,7 +44,6 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="privacy-icon">🔒</div>
             <h2 className="privacy-title">YOUR PRIVACY IS OUR #1 PRIORITY</h2>
             <p className="privacy-subtitle">We protect every bit of information. Try out now</p>
           </motion.div>
@@ -100,7 +99,7 @@ const About = () => {
                 </svg>
               </div>
               <h3>WE'RE TRANSPARENT ABOUT PRIVACY POLICY</h3>
-              <p>We clearly outline how your information is used and protected in our <a href="#privacy-policy" className="privacy-link">privacy policy</a>.</p>
+              <p>We clearly outline how your information is used and protected in our <button onClick={() => setCurrentPage && setCurrentPage('privacy-policy')} className="privacy-link">privacy policy</button>.</p>
             </motion.div>
           </div>
         </div>
@@ -141,7 +140,7 @@ const About = () => {
               <div className="step-number-circle">2</div>
               <h3 className="step-heading">Create model</h3>
               <p className="step-text">
-                Use AI to instantly generate financial models or create your own from scratch. Tailor models for M&A analysis, valuations, or investment decisions.
+                Use AI to instantly generate your own from scratch. Tailor models for M&A analysis, valuations, or investment decisions.
               </p>
             </motion.div>
 
@@ -153,9 +152,9 @@ const About = () => {
               viewport={{ once: true }}
             >
               <div className="step-number-circle">3</div>
-              <h3 className="step-heading">Export in Excel</h3>
+              <h3 className="step-heading">Run Deal Analysis</h3>
               <p className="step-text">
-                Export your completed models directly to Excel format. Seamlessly integrate with your existing workflow and share with stakeholders in familiar spreadsheet format.
+                Run advanced analysis incorporating AI-driven insights, market comparables, and assumption validation.
               </p>
             </motion.div>
           </div>
@@ -167,8 +166,8 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <button className="start-free-btn">Start for free</button>
-            <button className="book-demo-btn">Book a demo</button>
+            <button className="start-free-btn" onClick={() => setCurrentPage && setCurrentPage('pricing')}>Start for free</button>
+            <button className="book-demo-btn" onClick={() => window.location.href = 'mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo'}>Book a demo</button>
           </motion.div>
         </div>
 

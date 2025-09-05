@@ -1,3 +1,56 @@
+/* Success Screen Styles */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.success-content {
+  background: white;
+  border-radius: 24px;
+  padding: 4rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.success-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+}
+
+.success-message {
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  font-family: var(--font-text);
+}
+
+.success-logo {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.success-logo-img {
+  width: 280px;
+  height: auto;
+  opacity: 0.9;
+}
+
 .contact {
   background: var(--white);
   padding-bottom: 0;

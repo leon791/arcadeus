@@ -59,7 +59,7 @@ const CountUpNumber = ({ end, suffix = "", prefix = "", duration = 2, delay = 0 
   );
 };
 
-const Hero = () => {
+const Hero = ({ setCurrentPage }) => {
   return (
     <section className="hero">
       <div className="container">
@@ -85,8 +85,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Arcadeus is the first financial modeling AI, that fully automates the way 
-              financial institutions underwrite transactions.
+              Arcadeus fully automates institutional underwriting and applies artificial 
+              reasoning to reinvent the modeling process.
             </motion.p>
             
             <motion.div 
@@ -95,12 +95,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              <a href="#contact" className="btn btn-primary btn-large">
+              <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
                 Request Demo
               </a>
-              <a href="#services" className="btn btn-secondary btn-large">
+              <button onClick={() => setCurrentPage && setCurrentPage('product')} className="btn btn-secondary btn-large">
                 Learn More
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -112,20 +112,20 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
           <div className="stat">
-            <CountUpNumber end={95} suffix="%" duration={4} delay={0} />
-            <div className="stat-label">Faster Analysis</div>
+            <CountUpNumber end={92} suffix="%" duration={4} delay={0} />
+            <div className="stat-label">Automation of all data inputs</div>
           </div>
           <div className="stat">
-            <CountUpNumber end={2.3} prefix="$" suffix="B+" duration={4} delay={500} />
-            <div className="stat-label">Assets Analyzed</div>
+            <CountUpNumber end={6} suffix="+" duration={4} delay={500} />
+            <div className="stat-label">Agents available at any time</div>
           </div>
           <div className="stat">
-            <CountUpNumber end={150} suffix="+" duration={4} delay={1000} />
-            <div className="stat-label">Deals Completed</div>
+            <CountUpNumber end={12} suffix=" sec" duration={4} delay={1000} />
+            <div className="stat-label">Average time to generate model</div>
           </div>
           <div className="stat">
-            <CountUpNumber end={99.7} suffix="%" duration={4} delay={1500} />
-            <div className="stat-label">Accuracy Rate</div>
+            <CountUpNumber end={2} suffix="%" duration={4} delay={1500} />
+            <div className="stat-label">Average error rate of Arcadeus models</div>
           </div>
         </motion.div>
         

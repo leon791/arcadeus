@@ -446,22 +446,26 @@
 }
 
 .total-committed-card {
-  background: #f5f5f5;
+  background: transparent;
   border-radius: 24px;
   padding: 3rem;
   text-align: center;
   min-width: 300px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card-icon {
-  font-size: 4rem;
-  filter: grayscale(100%);
+  font-size: 7rem;
   opacity: 0.8;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  width: 120px;
+  line-height: 1;
 }
 
 .total-committed-card:hover .card-icon {

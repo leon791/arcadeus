@@ -185,7 +185,7 @@ const Solutions = () => {
             <p>Discover how Arcadeus can be tailored to your specific needs</p>
             
             <div className="cta-buttons">
-              <a href="#contact" className="btn btn-primary btn-large">
+              <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
                 Schedule a Demo
               </a>
               <a href="#pricing" className="btn btn-secondary btn-large">
