@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Pricing.css';
+import ComingSoonModal from './ComingSoonModal';
 
 const Pricing = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const pricingTiers = [
     {
       id: 'lite',
       name: 'Finance Professional Lite',
       subtitle: 'Essential tools for getting started',
-      price: '$49',
+      price: '$39',
       period: '/month',
       description: 'Core features to begin your financial modeling journey',
       features: [
@@ -25,7 +27,7 @@ const Pricing = () => {
       id: 'expert',
       name: 'Finance Professional Expert',
       subtitle: 'Advanced tools for finance professionals',
-      price: '$149',
+      price: '$59',
       period: '/month',
       description: 'Complete professional suite with advanced capabilities',
       features: [
@@ -135,6 +137,11 @@ const Pricing = () => {
                 <div className="card-footer">
                   <button 
                     className={`pricing-btn ${tier.buttonType === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
+                    onClick={() => {
+                      if (tier.id === 'lite' || tier.id === 'expert') {
+                        setShowComingSoon(true);
+                      }
+                    }}
                   >
                     {tier.buttonText}
                   </button>
@@ -171,6 +178,11 @@ const Pricing = () => {
           </motion.div>
         </div>
       </section>
+      
+      <ComingSoonModal 
+        isOpen={showComingSoon} 
+        onClose={() => setShowComingSoon(false)} 
+      />
     </div>
   );
 };

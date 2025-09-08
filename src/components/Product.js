@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Product.css';
+import ComingSoonModal from './ComingSoonModal';
 
 const Product = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const productFeatures = [
     {
       id: 'excel-integration',
@@ -20,21 +22,6 @@ const Product = () => {
       ]
     },
     {
-      id: 'ai-chat',
-      icon: '🤖',
-      title: 'AI Chat',
-      subtitle: 'Intelligent AI assistant for financial modeling guidance',
-      description: 'Converse naturally with our AI to build and refine your models. Ask questions, get instant answers on assumptions, receive formula suggestions, troubleshoot errors, and learn best practices through an intuitive chat interface.',
-      features: [
-        'Natural language model building',
-        'Instant formula suggestions',
-        'Error detection and troubleshooting',
-        'Best practice recommendations',
-        'Context-aware assistance',
-        'Multi-language support'
-      ]
-    },
-    {
       id: 'auto-ingest',
       icon: '📄',
       title: 'Auto Ingest',
@@ -47,6 +34,21 @@ const Product = () => {
         'Smart table extraction',
         'Data validation and cleaning',
         'Bulk document processing'
+      ]
+    },
+    {
+      id: 'ai-chat',
+      icon: '🤖',
+      title: 'AI Chat',
+      subtitle: 'Intelligent AI assistant for financial modeling guidance',
+      description: 'Converse naturally with our AI to build and refine your models. Ask questions, get instant answers on assumptions, receive formula suggestions, troubleshoot errors, and learn best practices through an intuitive chat interface.',
+      features: [
+        'Natural language model building',
+        'Instant formula suggestions',
+        'Error detection and troubleshooting',
+        'Best practice recommendations',
+        'Context-aware assistance',
+        'Multi-language support'
       ]
     },
     {
@@ -94,7 +96,7 @@ const Product = () => {
               Everything You Need to Model Faster
             </h1>
             <p className="product-subtitle">
-              Five powerful features that transform financial modeling from hours to minutes.
+              Powerful features that transform financial modeling from hours to minutes.
             </p>
           </motion.div>
         </div>
@@ -123,24 +125,6 @@ const Product = () => {
                 </div>
                 
                 <p className="feature-description">{feature.description}</p>
-                
-                <div className="feature-list">
-                  <h3>Key Features:</h3>
-                  <ul>
-                    {feature.features.map((item, idx) => (
-                      <motion.li 
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        <span className="checkmark">✓</span>
-                        {item}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
               </div>
               
               <motion.div 
@@ -261,39 +245,6 @@ const Product = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="cta-stats">
-              <motion.div 
-                className="stat-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <span className="stat-number">85%</span>
-                <span className="stat-label">Time Saved</span>
-              </motion.div>
-              <motion.div 
-                className="stat-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Models Built</span>
-              </motion.div>
-              <motion.div 
-                className="stat-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <span className="stat-number">99.9%</span>
-                <span className="stat-label">Accuracy</span>
-              </motion.div>
-            </div>
-            
             <motion.div
               className="cta-main"
               initial={{ opacity: 0, y: 20 }}
@@ -308,15 +259,20 @@ const Product = () => {
                 <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
                   Request a Demo
                 </a>
-                <a href="#trial" className="btn btn-secondary btn-large">
+                <button onClick={() => setShowComingSoon(true)} className="btn btn-secondary btn-large">
                   Start Free Trial
-                </a>
+                </button>
               </div>
             </motion.div>
             
           </motion.div>
         </div>
       </section>
+      
+      <ComingSoonModal 
+        isOpen={showComingSoon} 
+        onClose={() => setShowComingSoon(false)} 
+      />
     </div>
   );
 };

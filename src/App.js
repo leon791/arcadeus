@@ -7,7 +7,6 @@ import Features from './components/Features';
 import About from './components/About';
 import Contact from './components/Contact';
 import Product from './components/Product';
-import Solutions from './components/Solutions';
 import Pricing from './components/Pricing';
 import PrivacyPolicy from './components/PrivacyPolicy';
 
@@ -21,13 +20,6 @@ function App() {
           <>
             <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <Product />
-          </>
-        );
-      case 'solutions':
-        return (
-          <>
-            <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <Solutions />
           </>
         );
       case 'pricing':
