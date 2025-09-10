@@ -135,16 +135,13 @@ const Pricing = () => {
                 </div>
 
                 <div className="card-footer">
-                  <button 
+                  <a 
+                    href={`mailto:info@arcadeus.ai?subject=Arcadeus%20-%20${tier.buttonText === 'Start Free Trial' ? 'Free%20Trial%20Request' : 'Contact%20Sales'}`}
                     className={`pricing-btn ${tier.buttonType === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
-                    onClick={() => {
-                      if (tier.id === 'lite' || tier.id === 'expert') {
-                        setShowComingSoon(true);
-                      }
-                    }}
+                    style={{ textDecoration: 'none', display: 'block', textAlign: 'center' }}
                   >
                     {tier.buttonText}
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -168,7 +165,7 @@ const Pricing = () => {
             </p>
             
             <div className="faq-buttons">
-              <a href="#contact" className="btn btn-primary">
+              <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Contact%20Sales" className="btn btn-primary">
                 Contact Sales
               </a>
               <a href="#support" className="btn btn-secondary">

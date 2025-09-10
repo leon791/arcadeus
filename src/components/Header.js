@@ -66,8 +66,8 @@ const Header = ({ currentPage, setCurrentPage }) => {
           </div>
           
           <div className="nav-right">
-            <a href="#login" className="nav-link">Log In</a>
-            <button onClick={() => setShowComingSoon(true)} className="btn btn-primary">Sign Up</button>
+            <button onClick={() => setShowComingSoon(true)} className="nav-link" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>Log In</button>
+            <button onClick={(e) => handleNavClick(e, 'pricing')} className="btn btn-primary">Sign Up</button>
           </div>
         </nav>
       </div>

@@ -127,24 +127,106 @@ const Product = () => {
                 <p className="feature-description">{feature.description}</p>
               </div>
               
-              <motion.div 
-                className="feature-visual"
-                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50, scale: 0.95 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ 
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.43, 0.13, 0.23, 0.96]
-                }}
-                viewport={{ once: true }}
-              >
-                <div className="screenshot-placeholder">
-                  <div className="placeholder-content">
-                    <h4>{feature.title} Screenshot</h4>
-                    <p>Product screenshot will be inserted here</p>
+              <div className="feature-visual">
+                {feature.id === 'excel-integration' ? (
+                  <div className="feature-screenshot">
+                    <img 
+                      src="/images/Plug-in.png" 
+                      alt="Arcadeus Excel Plugin Interface" 
+                      className="product-feature-image"
+                      style={{
+                        width: '70%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '12px',
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
                   </div>
-                </div>
-              </motion.div>
+                ) : feature.id === 'auto-ingest' ? (
+                  <div className="feature-screenshot">
+                    <img 
+                      src="/images/doc drop.png" 
+                      alt="Arcadeus Auto Ingest - Document Upload Interface" 
+                      className="product-feature-image"
+                      style={{
+                        width: '70%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '12px',
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+                ) : feature.id === 'ai-chat' ? (
+                  <div className="feature-screenshot">
+                    <img 
+                      src="/images/IRR case.png" 
+                      alt="Arcadeus AI Chat - IRR Analysis Interface" 
+                      className="product-feature-image"
+                      style={{
+                        width: '70%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '12px',
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+                ) : feature.id === 'scenario-charts' ? (
+                  <div className="feature-screenshot">
+                    <img 
+                      src="/images/scenario charts.png" 
+                      alt="Arcadeus Scenario Charts - Financial Visualization" 
+                      className="product-feature-image"
+                      style={{
+                        width: '70%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '12px',
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+                ) : feature.id === 'model-review' ? (
+                  <div className="feature-screenshot">
+                    <img 
+                      src="/images/error detection.png" 
+                      alt="Arcadeus Model Review - Error Detection Interface" 
+                      className="product-feature-image"
+                      style={{
+                        width: '70%',
+                        maxWidth: '400px',
+                        height: 'auto',
+                        borderRadius: '12px',
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="screenshot-placeholder">
+                    <div className="placeholder-content">
+                      <h4>{feature.title} Screenshot</h4>
+                      <p>Product screenshot will be inserted here</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -259,9 +341,9 @@ const Product = () => {
                 <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
                   Request a Demo
                 </a>
-                <button onClick={() => setShowComingSoon(true)} className="btn btn-secondary btn-large">
+                <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Free%20Trial%20Request" className="btn btn-secondary btn-large" style={{ textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </a>
               </div>
             </motion.div>
             

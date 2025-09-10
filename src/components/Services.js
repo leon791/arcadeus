@@ -63,28 +63,28 @@ const Services = () => {
       footnote: '* Compatible with Excel 2016 and newer'
     },
     AI_CHAT: {
-      icon: '☁️',
+      icon: 'ai-chat',
       title: 'Converse',
       subtitle: 'Intelligent AI assistant for\nfinancial modeling guidance',
       description: 'Ask questions about your models, get instant\nanswers on assumptions, receive formula suggestions,\ntroubleshoot errors, optimize structures,\nand learn best practices through conversation.',
       footnote: '* Powered by advanced financial LLM'
     },
     AUTO_INGEST: {
-      icon: '📄',
+      icon: 'auto-ingest',
       title: 'Automate',
       subtitle: 'Intelligent data extraction from\nfinancial documents',
       description: 'Upload PDFs, spreadsheets, and reports,\nautomatically extract key metrics, populate\nmodel inputs, validate data accuracy,\nand streamline your workflow.',
       footnote: '* Supports 20+ document formats'
     },
     SCENARIO_CHARTS: {
-      icon: '📈',
+      icon: 'scenario-charts',
       title: 'Visualize',
       subtitle: 'Dynamic charts and scenario\nanalysis for better insights',
       description: 'Generate interactive charts, run sensitivity\nanalysis, create scenario comparisons,\nvisualize key metrics, export presentations,\nand communicate results effectively.',
       footnote: '* Real-time chart updates'
     },
     MODEL_REVIEW: {
-      icon: '🔍',
+      icon: 'model-review',
       title: 'Validate',
       subtitle: 'Comprehensive model review\nand error detection',
       description: 'Automated error checking, formula validation,\nassumption testing, consistency verification,\nbest practice compliance, and detailed\nreview reports with recommendations.',
@@ -170,11 +170,62 @@ const Services = () => {
                     {/* Green X letter */}
                     <path d="M200 450 L350 640 L200 830 L280 830 L400 680 L520 830 L600 830 L450 640 L600 450 L520 450 L400 600 L280 450 Z" fill="#107C41"/>
                   </svg>
-                ) : currentContent.icon === 'chat' ? (
-                  <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-                    {/* Professional cloud shape */}
-                    <path d="M25 55 Q25 45 35 45 Q35 35 45 35 Q48 28 58 28 Q68 28 70 35 Q80 35 80 45 Q80 55 70 55 Z" fill="white"/>
-                  </svg>
+                ) : currentContent.icon === 'ai-chat' ? (
+                  <img 
+                    src="/images/IRR case.png" 
+                    alt="Arcadeus AI Chat - IRR Analysis" 
+                    className="ai-chat-screenshot"
+                    style={{
+                      width: '150%',
+                      height: 'auto',
+                      borderRadius: '12px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                      transform: 'scale(1.2)',
+                      transformOrigin: 'center'
+                    }}
+                  />
+                ) : currentContent.icon === 'auto-ingest' ? (
+                  <img 
+                    src="/images/doc drop.png" 
+                    alt="Arcadeus Auto Ingest - Document Upload" 
+                    className="auto-ingest-screenshot"
+                    style={{
+                      width: '150%',
+                      height: 'auto',
+                      borderRadius: '12px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                      transform: 'scale(1.2)',
+                      transformOrigin: 'center'
+                    }}
+                  />
+                ) : currentContent.icon === 'scenario-charts' ? (
+                  <img 
+                    src="/images/scenario charts.png" 
+                    alt="Arcadeus Scenario Charts - Financial Visualization" 
+                    className="scenario-charts-screenshot"
+                    style={{
+                      width: '150%',
+                      height: 'auto',
+                      borderRadius: '12px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                      transform: 'scale(1.2)',
+                      transformOrigin: 'center'
+                    }}
+                  />
+                ) : currentContent.icon === 'model-review' ? (
+                  <img 
+                    src="/images/error detection.png" 
+                    alt="Arcadeus Model Review - Error Detection" 
+                    className="model-review-screenshot"
+                    style={{
+                      width: '150%',
+                      height: 'auto',
+                      borderRadius: '12px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                      transform: 'scale(1.2)',
+                      transformOrigin: 'center'
+                    }}
+                  />
                 ) : (
                   currentContent.icon
                 )}
