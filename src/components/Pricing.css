@@ -56,6 +56,8 @@
   display: flex;
   flex-direction: column;
   max-height: 450px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .pricing-card:hover {
@@ -294,25 +296,28 @@
 
 @media (max-width: 768px) {
   .pricing-hero {
-    padding: 4rem 0 3rem 0;
+    padding: 4rem 16px 3rem 16px;
   }
   
   .pricing-title {
     font-size: var(--font-size-hero-mobile);
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .pricing-subtitle {
     font-size: var(--font-size-body);
+    padding: 0 16px;
   }
   
   .pricing-cards {
-    padding: 3rem 0 6rem 0;
+    padding: 3rem 16px 6rem 16px;
   }
   
   .pricing-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 0.5rem;
+    gap: 1.5rem;
+    padding: 0;
   }
   
   .pricing-card.popular {
@@ -321,31 +326,77 @@
   
   .pricing-card {
     padding: 2rem 1.5rem;
+    max-height: none;
+    margin: 0 auto;
+    max-width: 400px;
   }
   
   .tier-name {
     font-size: var(--font-size-h3);
+    word-wrap: break-word;
+  }
+  
+  .tier-subtitle {
+    font-size: var(--font-size-caption);
   }
   
   .price {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  
+  .period {
+    font-size: var(--font-size-caption);
+  }
+  
+  .tier-description {
+    font-size: var(--font-size-caption);
+    line-height: 1.4;
+  }
+  
+  .features-list {
+    margin: 1rem 0;
+  }
+  
+  .feature-item {
+    font-size: var(--font-size-caption);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .pricing-btn {
+    padding: 16px 20px;
+    font-size: var(--font-size-body-sm);
+    min-height: 48px;
+  }
+  
+  .popular-badge {
+    padding: 8px 24px;
+    font-size: var(--font-size-caption);
+    min-width: 140px;
   }
   
   .pricing-faq {
-    padding: 4rem 0;
+    padding: 4rem 16px;
   }
   
   .faq-content h2 {
     font-size: var(--font-size-h1-mobile);
+    word-wrap: break-word;
+  }
+  
+  .faq-content p {
+    padding: 0 16px;
   }
   
   .faq-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .faq-buttons .btn {
     width: 280px;
     text-align: center;
+    min-height: 48px;
   }
 }

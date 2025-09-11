@@ -309,6 +309,17 @@
   .hero {
     padding-top: 100px;
     min-height: 80vh;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .hero-content {
+    margin-bottom: 4rem;
+    padding: 0 16px;
+  }
+  
+  .hero-text {
+    max-width: 100%;
   }
   
   .hero-visual {
@@ -317,10 +328,28 @@
   
   .hero-title {
     font-size: var(--font-size-hero-mobile);
+    line-height: 1.1;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-bottom: 1.5rem;
   }
   
   .hero-subtitle {
     font-size: var(--font-size-body);
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .btn-large {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
   
   .features-title {
@@ -347,9 +376,26 @@
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    padding: 3rem 16px;
+    margin: 0 -16px;
   }
   
   .stat-number {
     font-size: var(--font-size-hero-mobile);
+  }
+  
+  /* Excel model screenshot mobile */
+  .hero-excel-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  
+  .excel-model-screenshot {
+    margin: 0 -16px !important;
+    padding: 0 16px !important;
   }
 }

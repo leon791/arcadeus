@@ -628,14 +628,23 @@
 @media (max-width: 768px) {
   .services {
     padding: 4rem 0;
+    overflow-x: hidden;
   }
   
   .product-showcase {
     gap: 2rem;
+    padding: 0 16px;
+  }
+  
+  .showcase-content {
+    text-align: center;
+    padding: 0;
   }
   
   .showcase-title {
     font-size: var(--font-size-hero-mobile);
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .showcase-description {
@@ -646,21 +655,47 @@
     flex-direction: column;
   }
   
+  /* Excel table mobile optimization */
+  .excel-demo {
+    margin: 0 -16px;
+    border-radius: 8px;
+  }
+  
+  .excel-content {
+    height: 300px;
+  }
+  
+  .excel-split {
+    grid-template-columns: 1fr;
+  }
+  
   .excel-row {
-    grid-template-columns: 100px repeat(3, 60px);
-    font-size: 0.75rem;
+    grid-template-columns: 80px repeat(2, 50px);
+    font-size: 0.65rem;
   }
   
   .cell {
-    padding: 0.4rem 0.5rem;
+    padding: 0.3rem 0.25rem;
+    font-size: 0.65rem;
+  }
+  
+  .cell.label {
+    padding-left: 0.25rem;
+  }
+  
+  .arcadeus-panel {
+    padding: 1rem;
+    display: none; /* Hide on mobile to save space */
   }
   
   .raise-section {
     padding: 4rem 0;
+    overflow-x: hidden;
   }
   
   .raise-content {
     gap: 3rem;
+    padding: 0 16px;
   }
   
   .total-committed-card {
@@ -672,12 +707,26 @@
     font-size: 2.5rem;
   }
   
-  .raise-title {
+  .raise-title, .raise-main-title {
     font-size: var(--font-size-h1-mobile);
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .raise-subtitle {
     font-size: var(--font-size-body);
+  }
+  
+  /* Feature screenshots mobile */
+  .ai-chat-screenshot,
+  .auto-ingest-screenshot,
+  .scenario-charts-screenshot,
+  .model-review-screenshot {
+    width: 120% !important;
+    max-width: none !important;
+    transform: scale(1.0) !important;
+    border-radius: 8px !important;
+    margin: 0 -10% !important;
   }
 }
 

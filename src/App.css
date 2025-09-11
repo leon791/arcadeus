@@ -247,10 +247,49 @@ html {
   
   .container {
     padding: 0 16px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .header-responsive {
     justify-content: center !important;
     padding: 0 20px !important;
+  }
+  
+  /* Typography mobile adjustments */
+  h1, .hero-title {
+    font-size: var(--font-size-hero-mobile) !important;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  h2 {
+    font-size: var(--font-size-h1-mobile) !important;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: var(--font-size-h2-mobile) !important;
+    line-height: 1.3;
+  }
+  
+  p, .feature-description {
+    font-size: var(--font-size-body-sm) !important;
+    line-height: 1.5;
+  }
+  
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Button mobile optimizations */
+  .btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-body-sm);
+    min-height: 48px;
+    touch-action: manipulation;
   }
 }
