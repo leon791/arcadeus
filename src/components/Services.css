@@ -696,11 +696,32 @@
   .raise-content {
     gap: 3rem;
     padding: 0 16px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .raise-left {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .raise-right {
+    order: 1;
+    margin-bottom: 2rem;
   }
   
   .total-committed-card {
     min-width: 250px;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-icon {
+    font-size: 4rem !important;
+    height: 80px !important;
+    width: 80px !important;
   }
   
   .amount {
@@ -722,11 +743,47 @@
   .auto-ingest-screenshot,
   .scenario-charts-screenshot,
   .model-review-screenshot {
-    width: 120% !important;
-    max-width: none !important;
+    width: 100% !important;
+    max-width: 300px !important;
     transform: scale(1.0) !important;
     border-radius: 8px !important;
-    margin: 0 -10% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  /* Additional Features Section Mobile */
+  .additional-features-section {
+    padding: 0 16px;
+    margin: 3rem 0;
+  }
+  
+  .feature-highlight {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-side {
+    text-align: center;
+    padding-top: 0;
+  }
+  
+  .feature-title-wrapper {
+    margin-bottom: 2rem;
+  }
+  
+  .feature-highlight-title,
+  .feature-side-title {
+    font-size: var(--font-size-h2-mobile) !important;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Mobile override for additional-features-section */
+  .additional-features-section {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    margin: 3rem 0 !important;
+    padding: 0 16px !important;
   }
 }
 

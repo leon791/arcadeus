@@ -387,13 +387,20 @@
   
   /* Excel model screenshot mobile */
   .hero-visual-integrated {
-    margin: 2rem -16px 0 -16px;
+    margin: 2rem 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .integrated-demo {
     padding: 0 16px;
   }
   
   .excel-model-screenshot {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    display: flex;
+    justify-content: center;
   }
   
   .hero-excel-image {
@@ -401,7 +408,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 0;
+    margin: 0 auto;
     display: block;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
