@@ -113,9 +113,9 @@ const Services = () => {
                 </h2>
               </div>
               <p className="feature-highlight-description">
-                Once data is imported, comprehensive financial models are generated<br/>
-                in seconds—without a single formula typed. AI algorithms ensure you don't miss
-                critical assumptions and provide an overview of estimated returns<br/>
+                Once data is imported, comprehensive financial models are generated 
+                in seconds—without a single formula typed. AI algorithms ensure you don't miss 
+                critical assumptions and provide an overview of estimated returns 
                 per deal, enabling decision-makers to determine whether to proceed to due diligence or decline.
               </p>
             </div>
