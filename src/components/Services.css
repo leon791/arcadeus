@@ -701,27 +701,33 @@
   }
   
   .raise-left {
-    order: 2;
-    margin-top: 2rem;
-  }
-  
-  .raise-right {
     order: 1;
     margin-bottom: 2rem;
-  }
-  
-  .total-committed-card {
-    min-width: 250px;
-    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
+  .raise-right {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+  
+  .total-committed-card {
+    min-width: 300px;
+    max-width: 350px;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
   .card-icon {
-    font-size: 4rem !important;
-    height: 80px !important;
-    width: 80px !important;
+    font-size: 5rem !important;
+    height: 120px !important;
+    width: 120px !important;
   }
   
   .amount {
@@ -729,13 +735,39 @@
   }
   
   .raise-title, .raise-main-title {
-    font-size: var(--font-size-h1-mobile);
-    word-wrap: break-word;
-    hyphens: auto;
+    font-size: var(--font-size-h1-mobile) !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+    text-align: center !important;
+    padding: 0 16px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2rem !important;
   }
   
   .raise-subtitle {
-    font-size: var(--font-size-body);
+    font-size: var(--font-size-body-sm) !important;
+    text-align: center !important;
+    padding: 0 16px !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .raise-description {
+    font-size: var(--font-size-body-sm) !important;
+    text-align: center !important;
+    padding: 0 16px !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .raise-footnote {
+    font-size: var(--font-size-caption) !important;
+    text-align: center !important;
+    padding: 0 16px !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
   }
   
   /* Feature screenshots mobile */
@@ -744,11 +776,13 @@
   .scenario-charts-screenshot,
   .model-review-screenshot {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 350px !important;
+    height: auto !important;
     transform: scale(1.0) !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
     margin: 0 auto !important;
     display: block !important;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1) !important;
   }
   
   /* Additional Features Section Mobile */
