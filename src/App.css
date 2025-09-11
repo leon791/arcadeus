@@ -133,6 +133,108 @@ html {
   border-color: var(--text-primary);
 }
 
+/* Header responsive styling */
+.header-responsive {
+  justify-content: flex-start;
+}
+
+/* Login modal animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Download button with rainbow underglow */
+.download-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.download-button-glow {
+  position: relative;
+  background: #000 !important;
+  overflow: hidden;
+}
+
+.download-button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    #000000,
+    #1a1a1a,
+    #000000
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.download-button-glow:hover::before {
+  opacity: 1;
+}
+
+.download-button-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 8px;
+  background: linear-gradient(90deg,
+    rgba(255, 0, 0, 0.4),
+    rgba(255, 127, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(0, 255, 0, 0.4),
+    rgba(0, 127, 255, 0.4),
+    rgba(139, 0, 255, 0.4),
+    rgba(255, 0, 0, 0.4)
+  );
+  background-size: 200% 100%;
+  animation: rainbowShift 3s linear infinite;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.download-button-glow:hover::after {
+  opacity: 0.8;
+}
+
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.download-button-wrapper:hover .download-button-glow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .section {
@@ -145,5 +247,10 @@ html {
   
   .container {
     padding: 0 16px;
+  }
+  
+  .header-responsive {
+    justify-content: center !important;
+    padding: 0 20px !important;
   }
 }
