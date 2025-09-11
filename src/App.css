@@ -281,8 +281,15 @@ html {
   
   /* Prevent horizontal scroll */
   * {
-    max-width: 100%;
     box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    overflow-x: hidden;
   }
   
   /* Button mobile optimizations */

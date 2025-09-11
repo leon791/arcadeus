@@ -129,29 +129,11 @@ const Hero = ({ setCurrentPage }) => {
           </div>
         </motion.div>
         
-        <motion.div 
-          className="hero-visual-integrated"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-        >
+        <div className="hero-visual-integrated">
           <div className="integrated-demo">
-            <motion.div 
-              className="excel-model-screenshot"
-              initial={{ opacity: 0, scale: 0.9, y: 80 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ 
-                duration: 1.4, 
-                delay: 0.2,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
+            <div className="excel-model-screenshot">
               <img 
-                src="/images/arcadeus_excel_model.png2.png" 
+                src="/images/arcadeus_excel_model.png" 
                 alt="Arcadeus Excel Integration - Live Financial Model with MA PE Modeler" 
                 className="hero-excel-image"
                 style={{
@@ -159,21 +141,12 @@ const Hero = ({ setCurrentPage }) => {
                   height: 'auto',
                   borderRadius: '16px',
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
-                  border: '1px solid rgba(0, 0, 0, 0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-8px)';
-                  e.target.style.boxShadow = '0 30px 80px rgba(0, 0, 0, 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0px)';
-                  e.target.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.15)';
+                  border: '1px solid rgba(0, 0, 0, 0.1)'
                 }}
               />
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
