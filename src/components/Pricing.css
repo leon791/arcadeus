@@ -40,8 +40,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   width: 100%;
-  margin: 2rem 0 0 0;
-  padding: 0 1rem;
+  margin: 3rem 0 0 0;
+  padding: 2rem 1rem 0;
   align-items: stretch;
 }
 
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   max-height: 450px;
-  overflow: hidden;
+  overflow: visible;
   word-wrap: break-word;
 }
 
@@ -70,28 +70,28 @@
 .pricing-card.popular {
   border-color: #000000;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  transform: translateY(-8px);
+  transform: none;
   position: relative;
   z-index: 10;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  padding-top: 3rem;
-  margin-top: 20px;
+  padding-top: 4.5rem;
+  margin-top: 40px;
 }
 
 .popular-badge {
   position: absolute;
-  top: -18px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #000000 0%, #333333 100%);
   color: #ffffff;
-  padding: 10px 30px;
-  border-radius: 25px;
-  font-size: 0.8rem;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  min-width: 150px;
+  min-width: 140px;
   white-space: nowrap;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   z-index: 11;
