@@ -31,17 +31,18 @@
 
 /* Pricing Cards */
 .pricing-cards {
-  padding: 4rem 0 8rem 0;
+  padding: 5rem 0 9rem 0;
   background: #ffffff;
 }
 
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   margin: 0;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
+  align-items: start;
 }
 
 .pricing-card {
@@ -68,25 +69,30 @@
 
 .pricing-card.popular {
   border-color: #000000;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .popular-badge {
   position: absolute;
-  top: -25px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
-  background: #000000;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
   color: #ffffff;
-  padding: 10px 32px;
-  border-radius: 25px;
+  padding: 12px 36px;
+  border-radius: 30px;
   font-size: var(--font-size-body-sm);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  min-width: 160px;
+  min-width: 180px;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 11;
 }
 
 .card-header {
@@ -285,12 +291,12 @@
 
 @media (max-width: 1024px) {
   .pricing-grid {
-    gap: 1rem;
-    padding: 0 0.5rem;
+    gap: 1.25rem;
+    padding: 0 0.75rem;
   }
   
   .pricing-card.popular {
-    transform: scale(1.02);
+    transform: translateY(-6px);
   }
 }
 
