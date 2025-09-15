@@ -29,7 +29,7 @@ const Pricing = () => {
       subtitle: 'Advanced finance tools',
       price: '$59',
       period: '/month',
-      description: 'Complete professional suite with advanced capabilities',
+      description: 'Advanced tools for finance professionals',
       features: [
         'Unlimited model creation',
         'Advanced AI-powered suggestions',
@@ -106,12 +106,10 @@ const Pricing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                {tier.popular ? (
+                {tier.popular && (
                   <div className="popular-badge">
                     Most Popular
                   </div>
-                ) : (
-                  <div className="badge-spacer"></div>
                 )}
                 
                 <div className="card-header">

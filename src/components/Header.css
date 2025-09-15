@@ -7,6 +7,7 @@
   background: var(--white);
   transition: all 0.2s ease;
   border-bottom: 1px solid var(--border-gray);
+  min-height: 60px;
 }
 
 .header.scrolled {
@@ -259,8 +260,13 @@
 }
 
 @media (max-width: 768px) {
+  .nav {
+    padding: 0.75rem 16px;
+  }
+  
   .nav-left {
-    gap: 2rem;
+    gap: 1rem;
+    flex-shrink: 0;
   }
   
   .nav-links {
@@ -268,20 +274,48 @@
   }
   
   .logo-text {
-    font-size: var(--font-size-h3-mobile);
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
   }
   
   .nav-right {
-    gap: 1rem;
+    gap: 0.5rem;
+    flex-shrink: 0;
   }
   
   .nav-right .btn {
-    padding: 8px 20px;
-    font-size: var(--font-size-micro);
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-height: 36px;
+    white-space: nowrap;
+    border-radius: 8px;
   }
   
   .nav-link {
-    padding: 6px 12px;
-    font-size: var(--font-size-body-sm);
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-menu-container {
+    flex-shrink: 0;
+  }
+  
+  .user-button {
+    padding: 6px 8px;
+    min-height: 36px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .user-avatar, .user-avatar-placeholder {
+    width: 28px;
+    height: 28px;
   }
 }

@@ -76,7 +76,7 @@ const Hero = ({ setCurrentPage }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              Built for dealmakers. Powered by precision.
+              Built for dealmakers.<br />Powered by precision.
             </motion.h1>
             
             <motion.p 

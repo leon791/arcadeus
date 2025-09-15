@@ -235,14 +235,37 @@ html {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Add more mobile breakpoints */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  /* Smaller mobile font sizes */
+  :root {
+    --font-size-hero-mobile: 1.75rem;
+    --font-size-h1-mobile: 1.5rem;
+    --font-size-h2-mobile: 1.25rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding: 0 8px;
   }
   
   .container {
@@ -252,51 +275,82 @@ html {
   }
   
   .header-responsive {
-    justify-content: center !important;
-    padding: 0 20px !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
   }
   
   /* Typography mobile adjustments */
   h1, .hero-title {
-    font-size: var(--font-size-hero-mobile) !important;
+    font-size: 2rem !important;
     line-height: 1.2;
     word-wrap: break-word;
     hyphens: auto;
+    margin-bottom: 1rem;
   }
   
   h2 {
-    font-size: var(--font-size-h1-mobile) !important;
+    font-size: 1.75rem !important;
     line-height: 1.2;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
   }
   
   h3 {
-    font-size: var(--font-size-h2-mobile) !important;
+    font-size: 1.25rem !important;
     line-height: 1.3;
+    word-wrap: break-word;
   }
   
   p, .feature-description {
-    font-size: var(--font-size-body-sm) !important;
-    line-height: 1.5;
+    font-size: 0.9rem !important;
+    line-height: 1.6;
+    word-wrap: break-word;
   }
   
   /* Prevent horizontal scroll */
   * {
     box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  
+  html {
+    overflow-x: hidden;
   }
   
   body {
     overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .App {
+    overflow-x: hidden;
+    width: 100%;
   }
   
   .container {
     overflow-x: hidden;
+    width: 100%;
   }
   
   /* Button mobile optimizations */
   .btn {
-    padding: 12px 24px;
-    font-size: var(--font-size-body-sm);
+    padding: 14px 24px;
+    font-size: 0.9rem;
     min-height: 48px;
+    touch-action: manipulation;
+    border-radius: 24px;
+  }
+  
+  /* Input and form elements */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    min-height: 48px;
+  }
+  
+  /* Touch targets */
+  button, a, .btn {
+    min-height: 48px;
+    min-width: 48px;
     touch-action: manipulation;
   }
 }
