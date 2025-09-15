@@ -136,13 +136,6 @@ const Hero = ({ setCurrentPage }) => {
                 src="/images/arcadeus_excel_model.png" 
                 alt="Arcadeus Excel Integration - Live Financial Model with MA PE Modeler" 
                 className="hero-excel-image"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: '16px',
-                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
-                  border: '1px solid rgba(0, 0, 0, 0.1)'
-                }}
               />
             </div>
           </div>

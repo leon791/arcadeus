@@ -228,6 +228,16 @@
   justify-content: center;
 }
 
+.hero-excel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
 .integrated-demo {
   width: 100%;
   max-width: 1400px;
