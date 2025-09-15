@@ -26,7 +26,7 @@ const Pricing = () => {
     {
       id: 'expert',
       name: 'Finance Professional Expert',
-      subtitle: 'Advanced tools for finance professionals',
+      subtitle: 'Advanced finance tools',
       price: '$59',
       period: '/month',
       description: 'Complete professional suite with advanced capabilities',
