@@ -277,7 +277,7 @@
   
   .nav-links {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     margin: 0;
     list-style: none;
     margin-left: 0;
@@ -289,7 +289,7 @@
   
   .nav-links a {
     font-size: 0.7rem !important;
-    padding: 6px 10px !important;
+    padding: 6px 8px !important;
     white-space: nowrap;
     color: inherit;
     text-decoration: none;
@@ -310,7 +310,7 @@
     font-size: 1rem;
     font-weight: 700;
     white-space: nowrap;
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
   }
   
   .nav-right {
