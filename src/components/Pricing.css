@@ -80,15 +80,25 @@
 .popular-badge {
   background: #000000;
   color: #ffffff;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  padding: 6px 16px;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
-  display: inline-block;
-  margin: 0 auto 1rem auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-spacer {
+  height: 30px;
+  margin-bottom: 0.75rem;
 }
 
 .card-header {

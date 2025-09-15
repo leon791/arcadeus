@@ -106,10 +106,12 @@ const Pricing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                {tier.popular && (
+                {tier.popular ? (
                   <div className="popular-badge">
                     Most Popular
                   </div>
+                ) : (
+                  <div className="badge-spacer"></div>
                 )}
                 
                 <div className="card-header">
