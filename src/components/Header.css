@@ -261,7 +261,7 @@
 
 @media (max-width: 768px) {
   .nav {
-    padding: 0.75rem 16px;
+    padding: 0.75rem 12px 0.75rem 16px;
     justify-content: space-between;
     width: 100%;
   }
@@ -319,6 +319,7 @@
     display: flex;
     justify-content: flex-end;
     margin-left: auto;
+    padding-right: 4px;
   }
   
   .nav-right .btn {
