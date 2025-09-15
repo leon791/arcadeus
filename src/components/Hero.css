@@ -415,18 +415,22 @@
   
   /* Excel model screenshot mobile */
   .hero-visual-integrated {
-    margin: 2rem 0;
-    padding: 0 24px;
+    margin: 2rem auto;
+    padding: 0 20px;
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   
   .integrated-demo {
     padding: 0;
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
   
   .excel-model-screenshot {
@@ -436,16 +440,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    text-align: center;
   }
   
   .hero-excel-image {
     max-width: 100% !important;
     width: 100% !important;
     height: auto !important;
-    border-radius: 12px !important;
+    border-radius: 8px !important;
     margin: 0 auto !important;
     display: block !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
   }
 }
