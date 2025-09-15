@@ -9,7 +9,6 @@ const Contact = () => {
     company: '',
     role: '',
     message: '',
-    assetsUnderManagement: '',
     teamSize: ''
   });
   const [showSuccess, setShowSuccess] = useState(false);
@@ -51,7 +50,6 @@ const Contact = () => {
         company: '',
         role: '',
         message: '',
-        assetsUnderManagement: '',
         teamSize: ''
       });
       
@@ -187,35 +185,18 @@ const Contact = () => {
                     required
                   >
                     <option value="">Select your role</option>
+                    <option value="Analyst">Analyst</option>
+                    <option value="Associate">Associate</option>
+                    <option value="Vice President">Vice President</option>
                     <option value="Managing Director">Managing Director</option>
                     <option value="Partner">Partner</option>
-                    <option value="Principal">Principal</option>
-                    <option value="Vice President">Vice President</option>
-                    <option value="Director">Director</option>
-                    <option value="Head of Technology">Head of Technology</option>
-                    <option value="Other C-Suite">Other C-Suite</option>
+                    <option value="Technology Officer">Technology Officer</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
 
               <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="assetsUnderManagement">Assets Under Management *</label>
-                  <select
-                    id="assetsUnderManagement"
-                    name="assetsUnderManagement"
-                    value={formData.assetsUnderManagement}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="">Select range</option>
-                    <option value="Under $100M">Under $100M</option>
-                    <option value="$100M - $500M">$100M - $500M</option>
-                    <option value="$500M - $1B">$500M - $1B</option>
-                    <option value="$1B - $5B">$1B - $5B</option>
-                    <option value="Over $5B">Over $5B</option>
-                  </select>
-                </div>
                 <div className="form-group">
                   <label htmlFor="teamSize">Team Size *</label>
                   <select
