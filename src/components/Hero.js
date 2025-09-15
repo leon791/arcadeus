@@ -95,7 +95,7 @@ const Hero = ({ setCurrentPage }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo" className="btn btn-primary btn-large">
+              <a href="mailto:info@arcadeus.ai?subject=Arcadeus%20-%20Product%20Demo%20Request&body=Hello%20Arcadeus%20Team%2C%0A%0AI%20would%20like%20to%20schedule%20a%20product%20demo%20to%20learn%20more%20about%20your%20financial%20modeling%20solutions.%0A%0AI%20am%20particularly%20interested%20in%3A%0A-%20Excel%20integration%20capabilities%0A-%20AI-powered%20financial%20modeling%0A-%20Automated%20data%20processing%0A-%20Model%20review%20and%20validation%20features%0A%0AContact%20information%3A%0A-%20Name%3A%20%5BPlease%20fill%20in%5D%0A-%20Company%3A%20%5BPlease%20fill%20in%5D%0A-%20Role%2FTitle%3A%20%5BPlease%20fill%20in%5D%0A-%20Email%3A%20%5BPlease%20fill%20in%5D%0A-%20Phone%3A%20%5BOptional%5D%0A-%20Preferred%20demo%20time%3A%20%5BPlease%20fill%20in%5D%0A%0AThank%20you%20for%20your%20time.%20I%20look%20forward%20to%20hearing%20from%20you.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" className="btn btn-primary btn-large">
                 Request Demo
               </a>
               <button onClick={() => setCurrentPage && setCurrentPage('product')} className="btn btn-secondary btn-large">
