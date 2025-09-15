@@ -805,14 +805,14 @@
   
   .feature-highlight {
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem 0;
+    margin-bottom: 0.75rem;
+    padding: 1rem 0;
     position: relative;
   }
   
   .feature-side {
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: relative;
     margin-top: 0;
   }
